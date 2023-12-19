@@ -1,0 +1,125 @@
+:root {
+  --primary-color: #2C3E50;
+  --secondary-color: #F39C12;
+  --light-gray: #ECF0F1;
+  --dark-gray: #7F8C8D;
+  --error-red: #E74C3C;
+  --success-green: #2ECC71;
+  --transition-speed: 0.3s;
+}
+
+.auth_container {
+    /* background-color: #f5f5f5; */
+    padding: 20px;
+    border-radius: 5px;
+    width: 350px;
+    margin: 50px auto;
+
+    border: 1px solid var(--dark-gray);
+    border-radius: 12px;
+    background-color: #fff;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+    /* box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); */
+  }
+  main {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Arial', sans-serif;
+    width: 25vw;
+    color: var(--primary-color);
+    /* height: 45vh; */
+}
+.login_header{
+  font-size: 1.8rem;
+  margin-bottom:0px;
+  color: var(--primary-color);
+  font-weight: 600;
+  text-align: center;
+}
+
+.auth_form {
+    padding: 25px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input_header {
+    font-weight: 100;
+}
+
+.form_input {
+    /* padding: 9px;
+    width: 100%;
+    margin-bottom: 2vh;
+    border: 1px solid rgb(139, 137, 137);
+    border-radius: 6px;
+    color: #7a7a7a; */
+
+    width: 72%;
+    padding: 12px;
+    margin-bottom: 10px;
+    border: 1px solid var(--dark-gray);
+    border-radius: 8px;
+    background-color: var(--light-gray);
+    font-size: 1rem;
+    transition: border-color var(--transition-speed) ease, box-shadow 0.2s ease;
+    outline: none;
+}
+.username_container{
+width: 100%;
+display: flex;
+justify-content: center;
+}
+
+.password_container{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.form_input:focus {
+  border-color: var(--secondary-color);
+  box-shadow: 0 0 5px rgba(243, 156, 18, 0.4);
+}
+
+.login_btn{
+  width: 80%;
+  padding: 12px;
+  background-color: var(--primary-color);
+  color: #FFF;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color var(--transition-speed) ease-in-out, transform 0.2s ease-in-out;
+}
+
+.login_btn:hover{
+  background-color: var(--secondary-color);
+  transform: translateY(-1px);
+}
+
+.login_or_register_text{
+    font-size: smaller;
+    color: grey;
+}
+
+.login_or_register_btn{
+    text-decoration: underline;
+    background-color: transparent;
+    border: none;
+    font-size: smaller;
+    color: var(--secondary-color);
+    cursor: pointer;
+}
+
+.login_or_register_btn:hover{
+    font-weight: bold;
+    text-decoration: none;
+}

@@ -1,0 +1,9 @@
+:root {
+    --primary-color: #2C3E50;
+    --secondary-color: #F39C12;
+    --light-gray: #ECF0F1;
+    --dark-gray: #7F8C8D;
+    --error-red: #E74C3C;
+    --success-green: #2ECC71;
+    --transition-speed: 0.3s;
+}

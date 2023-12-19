@@ -1,0 +1,33 @@
+:root {
+    --primary-color: #16181D;
+    --secondary-color: rgba(214, 163, 11, 0.816);
+    --tiertiary-color: rgba(162, 123, 5, 0.936);
+    --thecolor: rgb(179, 136, 9);
+    --the-highlight: #833904;
+    --light-gray: #ECF0F1;
+    --dark-gray: #2C3E50;
+    --error-red: #E74C3C;
+    --success-green: #2ECC71;
+    --transition-speed: 0.3s;
+  }
+
+.App{
+    min-height: 100vh;
+}
+
+.simplebar-scrollbar {
+    width: .5vw;
+    background-color: transparent;
+    cursor: pointer;
+  }
+  
+  .simplebar-scrollbar:before {
+    background-color: var(--the-highlight);
+    cursor: pointer;
+  }
+  
+  .simplebar-track {
+    background-color: transparent;
+    cursor: pointer;
+  }
+  

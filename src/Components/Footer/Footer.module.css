@@ -1,0 +1,132 @@
+:root {
+    --primary-color: #16181D;
+    --secondary-color: rgba(214, 163, 11, 0.816);
+    --tiertiary-color: rgba(162, 123, 5, 0.936);
+    --thecolor: rgb(179, 136, 9);
+    --light-gray: #ECF0F1;
+    --dark-gray: #2C3E50;
+    --error-red: #E74C3C;
+    --success-green: #2ECC71;
+    --transition-speed: 0.3s;
+  }
+
+body, p {
+    /* margin: 0; */
+    box-sizing: border-box;
+}
+
+.footer_container {
+    background-color: var(--primary-color); 
+    color: white;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
+    
+}
+
+.footer_content_container{
+    display: flex;
+    justify-content: space-evenly;
+    min-height: 15vh;
+    padding-top: 1%;
+    width: 100%;
+}
+
+.footer_line_container{
+    width: 98%;
+}
+
+.social_icon_container{
+    /* width: 3vw; */
+    display: flex;
+    justify-content: space-around;
+    padding-top: 10%;
+}
+.social_icon{
+    color: var(--thecolor);
+    font-size: 2.85rem;
+    cursor: pointer;
+}
+.social_icon:hover{
+    color: white;
+}
+
+.footer_credits{
+    display: flex;
+    margin-left: auto;
+    padding-right: 1vw;
+    font-size: small;
+    height: 2vh;
+    gap: 2vw;
+    justify-content: space-evenly;
+    align-items: end;
+    text-align: right;
+}
+.footer_credits >p > a{
+    color: var(--secondary-color);
+    cursor: pointer;
+}
+
+.footer_credits >p > a:hover{
+    color: rgb(196, 192, 192);
+    font-weight: bold;
+}
+.data_outer_container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 25%;
+}
+.data_container{
+    height: 115%;
+}
+
+.data_container>h3{
+    
+}
+
+.vertical_line{
+    border-right: 2px solid var(--secondary-color);
+    height: 100%;
+}
+
+.nav_item {
+    margin: 0 1vw;
+    position: relative;
+    transition: color 0.3s ease;
+    cursor: pointer;
+    color: var(--secondary-color);
+    font-size: 1em;
+    font-weight: 900;
+    text-align: center;
+}
+.nav_item:hover {
+    color: white;
+}
+.active{
+    margin: 0 1vw;
+    position: relative;
+    transition: color 0.3s ease;
+    cursor: pointer;
+    text-decoration: underline;
+    color: var(--tiertiary-color);
+    font-size: 1em;
+    text-align: center;
+}
+
+.nav_outer_container{
+    display: flex;
+    justify-content: flex-start;
+    text-align: left;
+    align-content: flex-start;
+    width: 100%;
+}
+
+.nav_container{
+    display: flex;
+    flex-direction: column;
+}
+
