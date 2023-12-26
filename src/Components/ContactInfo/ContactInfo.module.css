@@ -1,0 +1,61 @@
+:root {
+    --primary-color: #16181D;
+    --secondary-color: rgba(214, 163, 11, 0.816);
+    --tiertiary-color: rgba(162, 123, 5, 0.936);
+    --light-gray: #ECF0F1;
+    --dark-gray: #2C3E50;
+    --error-red: #E74C3C;
+    --success-green: #2ECC71;
+    --transition-speed: 0.3s;
+}
+
+.contactInfo_container {
+  flex: 2;
+  max-width: 50%;
+  background-color: var(--primary-color);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  color: var(--light-gray);
+}
+
+.contactInfo_title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.contactInfo_mail {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.storeHours_container {
+  margin-top: 20px;
+  display: flex;
+}
+
+.storeHours_title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 3%;
+}
+
+.storeHours_days {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; 
+  font-weight: bold;
+  margin-bottom: 1%;
+}
+
+.storeHours_hours {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 3%;
+}
+
+
+
+

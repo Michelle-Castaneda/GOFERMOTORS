@@ -8,9 +8,12 @@ import AuthContext from "../../store/authContext";
 import Login from "../Login/Login";
 import loginImg from "../../assets/login.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMobile, faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons";
+import { faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons";
 import { FaFacebook, FaInstagram } from "react-icons/fa";
 import { FaWhatsapp} from 'react-icons/fa';
+import { FaPhoneAlt } from "react-icons/fa";
+
+
 
 function Header() {
   const { state, dispatch } = useContext(AuthContext);
@@ -68,7 +71,7 @@ function Header() {
                 href={`tel:${phoneNumber}`}
                 className={styles.header_top_right_phone}
               >
-                <FontAwesomeIcon icon={faMobile} />
+                <FaPhoneAlt />
                 (956) 258-5021
               </a>
             </span>
@@ -79,7 +82,7 @@ function Header() {
               >
                 <FaWhatsapp size={20}
                 onClick={handleWhatsAppClick} />
-                (956) 258-5021
+                (956) 533 - 8752
               </span>
             </span>
           </span>
