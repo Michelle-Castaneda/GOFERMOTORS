@@ -11,16 +11,55 @@
 
 .contact_container{
     display: flex;
-    /* align-items: center; */
     background-color: var(--primary-color);
     flex-wrap: wrap;
 }
 
-.visit_container {
+/* .ContactUsCard_Component,
+.contact_pics_container {
+  width: 100%;
+  box-sizing: border-box; 
+} */
+
+.ContactUsCard_Component {
+  display: flex;
+  flex: 3; 
+  flex-direction: column;
+  max-width: 50%;
+
+}
+
+.contact_pics_container {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  margin-top: 20px;
+  flex: 1; 
+  flex-wrap: wrap;
+  max-width: 20%;
+ 
+}
+
+.ContactInfo_Component {
+  display: flex;
+  flex: 2; 
+  flex-direction: column;
+  max-width: 100%;
+  flex-wrap: wrap;
+}
+
+.google_map {
+  flex: 2;
+  max-width: 100%;
+  box-sizing: border-box;
+  border: 1px solid var(--secondary-color);
+  border-radius: 2%;
+}
+
+
+.visit_container {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  margin-top: 5%;
 }
 
 .visit_title {
@@ -30,38 +69,21 @@
 }
 
 .visit_message {
-  text-align: center;
   margin-top: 10px;
   color: var(--light-gray);
 }
 
-.contact_pic1,
-.contact_pic2 {
-  /* width: 100%; */
-  max-width: 20%;
-  /* margin-top: 10px; */
-}
-.contact_pics_container {
-  display: flex;
-  flex-direction: column;
-  /* align-items: flex-end; */
-  /* margin-top: 20px;
-  max-width: 100px;
-  max-height: 100px; */
-}
 
-.google_map{
-  flex: 2;
-  max-width: 50%;
-  border: 1px solid var(--secondary-color);
-  border-radius: 2%;
-  
-}
 
 @media (max-width: 768px) {
+  .contact_container {
+    flex-direction: column;
+  }
+
+  .ContactUsCard_Component,
   .contact_pics_container {
-    flex-direction: column; 
     max-width: 100%;
+    flex: auto;
   }
 
   .contact_pic1,

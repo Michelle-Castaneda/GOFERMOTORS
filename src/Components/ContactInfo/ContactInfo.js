@@ -13,6 +13,7 @@ function ContactInfo() {
     <div className={styles.contactInfo_container}>
       <div className={styles.contactInfo_title}>
         GOFER MOTORS LLC
+        <hr />
         </div> 
         <div className={styles.contactInfo_mail}>
         <CiMail />
@@ -33,6 +34,7 @@ function ContactInfo() {
       <br/>
       <div className={styles.storeHours_title}>
           STORE HOURS
+          <hr />
         </div> 
       <div className={styles.storeHours_container}>
         <div className={styles.storeHours_days}>

@@ -130,3 +130,19 @@ body, p {
     flex-direction: column;
 }
 
+.storeHours_container {
+    display: flex;
+  }
+
+.storeHours_days {
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+    flex-wrap: wrap;
+  }
+  
+  .storeHours_hours {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}

@@ -37,6 +37,18 @@ function Footer() {
         <div className={styles.data_outer_container}>
           <div className={styles.data_container}>
             <h3>STORE HOURS</h3>
+            <div className={styles.storeHours_container}>
+        <div className={styles.storeHours_days}>
+          <div>Monday - Friday</div>
+          <div>Saturday</div>
+          <div>Sunday</div>
+        </div>
+        <div className={styles.storeHours_hours}>
+          <div>9:00 AM - 6:00 PM</div>
+          <div>9:00 AM - 3:00 PM</div>
+          <div>BY APPOINTMENT</div>
+        </div>
+      </div>
             <div className={styles.social_icon_container}></div>
           </div>
           <div className={styles.vertical_line}></div>
