@@ -16,19 +16,22 @@ function ContactInfo() {
         <hr />
         </div> 
         <div className={styles.contactInfo_mail}>
-        <CiMail />
-        y.gofer@gofermotors.com 
-        <br/>
-        sales@gofermotors.com
+        <CiMail className={styles.icon} />
+        <div className={styles.textContainer}>
+
+     <p> y.gofer@gofermotors.com | sales@gofermotors.com</p>
+      </div>
       </div>
       <div className={styles.contactInfo_phone}>
-      <FaPhoneAlt />
-        (956) 258 - 5021 <br/>
+      <FaPhoneAlt className={styles.icon} />
+      <div className={styles.textContainer}>
+        (956) 258 - 5021 </div>
+        <br/>
         <FaWhatsapp size={20}/>
         (956) 533 - 8752
       </div>
       <div className={styles.contactInfo_address}>
-      <FontAwesomeIcon  icon={faMapMarkerAlt} />
+      <FontAwesomeIcon  icon={faMapMarkerAlt} className={styles.icon} />
         1703 N Tower Rd Alamo, Texas, United States.
       </div>
       <br/>

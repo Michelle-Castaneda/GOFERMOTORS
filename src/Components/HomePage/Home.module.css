@@ -158,12 +158,19 @@
   .contact_container {
     display: flex;
     flex-wrap: wrap;
+    background-color: var(--primary-color);
+
   }
   
-  .google_map {
-    flex: 2;
-  }
-  
+ 
+.google_map {
+  flex: 2;
+  max-width: 100%;
+  box-sizing: border-box;
+  /* border: 1% solid var(--secondary-color); */
+  border-radius: 5%;
+margin: 2%;
+}
   .ContactInfo_Component {
     flex: 2;
   }

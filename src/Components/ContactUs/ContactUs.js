@@ -33,10 +33,12 @@ function ContactUs () {
                 </iframe>
                 </div>
 
+
+                <hr/>
+
                 <div className={styles.visit_container}>
 
         <div className={styles.visit_title}>
-        <hr/>
             Visit, make a call, or send us a quick message!
             </div>
 
@@ -47,38 +49,50 @@ function ContactUs () {
             <br/>
              Your satisfaction is our priority.
              </div>
+             
+             <ContactUsCard className={styles.contactUsCard_component} />
+
         </div>
              <br/>
 
 
-        <ContactUsCard className={styles.contactUsCard_component} />
-
         <div className={styles.contactpics_container}>
-            <img className={styles.contact_pic1} src={test_drive} alt="people talking"/>
-            <img className={styles.contact_pic2} src={test_drive2} alt="woman driving"/>
+            <img className={styles.contact_pic} src={test_drive} alt="people talking"/>
+            <img className={styles.contact_pic} src={test_drive2} alt="woman driving"/>
+            <img className={styles.contact_pic} src={test_drive2} alt="woman driving2"/>
        </div>
 
        <hr/>
-
+       <br/>
        <div className={styles.whyGofer_container}>
 <div className={styles.whyGofer_title}>
-    Why Gofer Motors?
+    Why choose Gofer Motors?
 </div>
+<br/>
+<br/>
+
 <div className={styles.whyGofer_subtitle}>
     Wide Variety of Quality Vehicles
 </div>
+<div className={styles.whyGofer_text}>
+Diverse selection of makes and models, each vehicle in our inventory guarantees exceptional quality, delivering optimal performance 
+and unwavering reliability on every journey.
+</div>
+<br/>
+
 <div className={styles.whyGofer_subtitle}>
     Convienient Financing
 </div>
 <div className={styles.whyGofer_text}>
-    Multiple financing options so that we can tailor a financing solution that aligns with your unique needs.
-    </div>
+Multiple financing options are available, allowing us to tailor a financing solution specifically to align with your unique needs. Whether you prefer flexible terms, competitive interest rates, or a customized payment plan, our goal is to provide you with the financial flexibility that suits your individual preferences and circumstances.    </div>
+    <br/>
+
 <div className={styles.whyGofer_subtitle}>
     Exceptional Customer Service
 </div>
 <div class={styles.whyGofer_text}>
-Our sales and service team are knowledgeable, approachable
-    </div>
+Our sales and service team are knowledgeable, approachable, and dedicated to providing exceptional assistance, ensuring that your experience with us is not only informed and friendly but also exceeds your expectations.    </div>
+    <br/>
 </div>
 
 <hr/>

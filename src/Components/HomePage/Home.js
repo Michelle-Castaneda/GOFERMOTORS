@@ -57,7 +57,7 @@ function Home() {
           </div>
           
         </div>
-        <div className={styles.contact_container}>x
+        <div className={styles.contact_container}>
         <ContactInfo className={styles.ContactInfo_Component}/>
         <iframe className={styles.google_map}
                     src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d28633.888531722707!2d-98.1018341!3d26.2215181!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86659f5b93e0b6d5%3A0x948d328f2ce5f191!2sGofer%20Motors%2C%20LLC!5e0!3m2!1sen!2sus!4v1697062032696!5m2!1sen!2sus" 
