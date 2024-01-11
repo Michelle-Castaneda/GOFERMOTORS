@@ -131,7 +131,7 @@ function Footer() {
         <p className={styles.privacy_rights}>
           © 2023 Gofer Motors LLC. All rights reserved.
         </p>
-        {/* <p>Developed by <a href="https://katrynayaworski.github.io" target="_blank">Katryna Yaworski</a></p> */}
+        { /* <p>Developed by <a href="https://katrynayaworski.github.io" target="_blank">Katryna Yaworski</a></p> */}
       </div>
     </div>
   );

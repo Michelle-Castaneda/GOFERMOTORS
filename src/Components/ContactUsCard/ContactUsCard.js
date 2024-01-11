@@ -62,7 +62,7 @@ function ContactUsCard () {
     };
 
     return (
-        <div className={styles.contact_card_container}> 
+        <div className={styles.contactCard_container}> 
             <input 
                 className={styles.name} 
                 placeholder="First Name" 

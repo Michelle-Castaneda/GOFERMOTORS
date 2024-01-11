@@ -9,38 +9,34 @@
     --transition-speed: 0.3s;
   }
 
+.contact_complete{
+  background-color: var(--primary-color);
+
+}
+
 .contact_container{
     display: flex;
-    background-color: var(--primary-color);
     flex-wrap: wrap;
 }
 
-/* .ContactUsCard_Component,
-.contact_pics_container {
-  width: 100%;
-  box-sizing: border-box; 
-} */
 
-.ContactUsCard_Component {
+.contactUsCard_Component {
   display: flex;
-  flex: 3; 
   flex-direction: column;
-  max-width: 50%;
+  max-width: 100%;
 
 }
 
-.contact_pics_container {
-  display: flex;
+.contactpics_container {
+  display: flex;  
   flex-direction: column;
-  flex: 1; 
   flex-wrap: wrap;
-  max-width: 20%;
- 
+  max-width: 20%; 
+  background-color: var(--primary-color);
 }
 
-.ContactInfo_Component {
-  display: flex;
-  flex: 2; 
+.contactInfo_component {
+  display: flex;  
   flex-direction: column;
   max-width: 100%;
   flex-wrap: wrap;
@@ -73,6 +69,18 @@
   color: var(--light-gray);
 }
 
+.whyGofer_container{
+  color: var(--light-gray);
+  flex-direction: column;
+  align-content: center;
+}
+
+.reviews_container{
+  display: flex;
+  }
+
+
+
 
 
 @media (max-width: 768px) {
@@ -80,8 +88,7 @@
     flex-direction: column;
   }
 
-  .ContactUsCard_Component,
-  .contact_pics_container {
+  .contactUsCard_component {
     max-width: 100%;
     flex: auto;
   }
@@ -91,3 +98,4 @@
     max-width: 100%;
   }
 }
+

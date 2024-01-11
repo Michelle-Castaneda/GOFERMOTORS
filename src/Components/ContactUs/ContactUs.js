@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "./ContactUs.module.css";
 import ContactUsCard from "../ContactUsCard/ContactUsCard";
 import ContactInfo from "../ContactInfo/ContactInfo";
@@ -6,10 +6,21 @@ import test_drive from "../../assets/contact_us_images/test_drive.jpg";
 import test_drive2 from "../../assets/contact_us_images/test_drive2.jpg";
 
 function ContactUs () {
+    useEffect(() => {
+        const script = document.createElement("script");
+        script.src = "https://static.elfsight.com/platform/platform.js";
+        script.defer = true;
+        document.head.appendChild(script);
+    
+        return () => {
+          document.head.removeChild(script);
+        };
+      }, []); 
+
     return (
-        
+        <div className={styles.contact_complete}>
        <div className={styles.contact_container}>
-        <ContactInfo className={styles.ContactInfo_Component} />
+        <ContactInfo className={styles.contactInfo_component} />
          <iframe className={styles.google_map}
                     src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d28633.888531722707!2d-98.1018341!3d26.2215181!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86659f5b93e0b6d5%3A0x948d328f2ce5f191!2sGofer%20Motors%2C%20LLC!5e0!3m2!1sen!2sus!4v1697062032696!5m2!1sen!2sus" 
                     width="600" 
@@ -20,13 +31,15 @@ function ContactUs () {
                     title="Gofer Motors Location" 
                     referrerPolicy="no-referrer-when-downgrade">
                 </iframe>
-                
+                </div>
+
                 <div className={styles.visit_container}>
-                    
+
         <div className={styles.visit_title}>
         <hr/>
             Visit, make a call, or send us a quick message!
             </div>
+
             <div className={styles.visit_message}>
             We are committed to providing you with exceptional customer service. Need assistance with the purchasing process? 
             <br/>
@@ -34,16 +47,49 @@ function ContactUs () {
             <br/>
              Your satisfaction is our priority.
              </div>
-             </div>
+        </div>
              <br/>
-        <ContactUsCard className={styles.ContactUsCard_Component} />
-        <div className={styles.contact_pics_container}>
+
+
+        <ContactUsCard className={styles.contactUsCard_component} />
+
+        <div className={styles.contactpics_container}>
             <img className={styles.contact_pic1} src={test_drive} alt="people talking"/>
             <img className={styles.contact_pic2} src={test_drive2} alt="woman driving"/>
-       
+       </div>
 
-       </div>
-       </div>
+       <hr/>
+
+       <div className={styles.whyGofer_container}>
+<div className={styles.whyGofer_title}>
+    Why Gofer Motors?
+</div>
+<div className={styles.whyGofer_subtitle}>
+    Wide Variety of Quality Vehicles
+</div>
+<div className={styles.whyGofer_subtitle}>
+    Convienient Financing
+</div>
+<div className={styles.whyGofer_text}>
+    Multiple financing options so that we can tailor a financing solution that aligns with your unique needs.
+    </div>
+<div className={styles.whyGofer_subtitle}>
+    Exceptional Customer Service
+</div>
+<div class={styles.whyGofer_text}>
+Our sales and service team are knowledgeable, approachable
+    </div>
+</div>
+
+<hr/>
+           
+<div className={styles.reviews_container}>
+        <div className="elfsight-app-f758bd66-983b-415b-97cd-0c676468ba9f" data-elfsight-app-lazy>
+
+        </div>
+      </div>
+</div>
+
     )
 }
 
