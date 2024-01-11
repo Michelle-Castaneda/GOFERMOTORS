@@ -22,19 +22,30 @@ function ContactInfo() {
      <p> y.gofer@gofermotors.com | sales@gofermotors.com</p>
       </div>
       </div>
-      <div className={styles.contactInfo_phone}>
+
+      <div className={styles.contactInfo_phone1}>
       <FaPhoneAlt className={styles.icon} />
       <div className={styles.textContainer}>
-        (956) 258 - 5021 </div>
-        <br/>
-        <FaWhatsapp size={20}/>
-        (956) 533 - 8752
+        <p>(956) 258 - 5021</p> 
+        </div>
+        
       </div>
+      <div className={styles.contactInfo_phone2}>
+        <FaWhatsapp size={20} className={styles.icon}/>
+        <div className={styles.textContainer}>
+        <p>(956) 533 - 8752</p>
+        </div>
+</div>
+
       <div className={styles.contactInfo_address}>
       <FontAwesomeIcon  icon={faMapMarkerAlt} className={styles.icon} />
-        1703 N Tower Rd Alamo, Texas, United States.
+      <div className={styles.textContainer}>
+        <p>1703 N Tower Rd Alamo, Texas, United States.</p>
+        </div>
       </div>
+
       <br/>
+      
       <div className={styles.storeHours_title}>
           STORE HOURS
           <hr />

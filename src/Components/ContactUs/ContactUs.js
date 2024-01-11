@@ -33,9 +33,9 @@ function ContactUs () {
                 </iframe>
                 </div>
 
-
                 <hr/>
 
+        <div className={styles.contactVisitPics}>
                 <div className={styles.visit_container}>
 
         <div className={styles.visit_title}>
@@ -49,8 +49,9 @@ function ContactUs () {
             <br/>
              Your satisfaction is our priority.
              </div>
-             
-             <ContactUsCard className={styles.contactUsCard_component} />
+             <br/>
+
+             <ContactUsCard className={styles.contactUsCard_Component} />
 
         </div>
              <br/>
@@ -61,7 +62,7 @@ function ContactUs () {
             <img className={styles.contact_pic} src={test_drive2} alt="woman driving"/>
             <img className={styles.contact_pic} src={test_drive2} alt="woman driving2"/>
        </div>
-
+</div>
        <hr/>
        <br/>
        <div className={styles.whyGofer_container}>
