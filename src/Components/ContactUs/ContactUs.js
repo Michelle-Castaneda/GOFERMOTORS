@@ -4,6 +4,8 @@ import ContactUsCard from "../ContactUsCard/ContactUsCard";
 import ContactInfo from "../ContactInfo/ContactInfo";
 import test_drive from "../../assets/contact_us_images/test_drive.jpg";
 import test_drive2 from "../../assets/contact_us_images/test_drive2.jpg";
+import customer_shaking_hands from "../../assets/contact_us_images/customer_shaking_hands.jpg";
+
 
 function ContactUs () {
     useEffect(() => {
@@ -19,7 +21,9 @@ function ContactUs () {
 
     return (
         <div className={styles.contact_complete}>
-       <div className={styles.contact_container}>
+            <div className={styles.banner} src={customer_shaking_hands} alt="people shaking hands" />   
+
+            <div className={styles.contact_container}>
         <ContactInfo className={styles.contactInfo_component} />
          <iframe className={styles.google_map}
                     src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d28633.888531722707!2d-98.1018341!3d26.2215181!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86659f5b93e0b6d5%3A0x948d328f2ce5f191!2sGofer%20Motors%2C%20LLC!5e0!3m2!1sen!2sus!4v1697062032696!5m2!1sen!2sus" 
@@ -60,7 +64,7 @@ function ContactUs () {
         <div className={styles.contactpics_container}>
             <img className={styles.contact_pic} src={test_drive} alt="people talking"/>
             <img className={styles.contact_pic} src={test_drive2} alt="woman driving"/>
-            <img className={styles.contact_pic} src={test_drive2} alt="woman driving2"/>
+            {/* <img className={styles.contact_pic} src={test_drive2} alt="woman driving2"/> */}
        </div>
 </div>
        <hr/>

@@ -84,10 +84,6 @@ body, p {
     height: 115%;
 }
 
-.data_container>h3{
-    
-}
-
 .vertical_line{
     border-right: 2px solid var(--secondary-color);
     height: 100%;
@@ -132,17 +128,18 @@ body, p {
 
 .storeHours_container {
     display: flex;
-  }
+/* justify-content: space-between;   */
+}
 
 .storeHours_days {
     display: flex;
     flex-direction: column;
     font-weight: bold;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
   }
   
   .storeHours_hours {
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
 }

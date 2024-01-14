@@ -23,7 +23,7 @@
 .contactUsCard_Component {
   display: flex;
   flex-direction: column;
-  max-width: 50%;
+  max-width: 100%;
 
 }
 
@@ -47,6 +47,7 @@ margin: 1%;
 .contactVisitPics {
   display: flex;
   flex-direction: row;
+  margin-top: 5%;
 }
 
 .visit_container {
@@ -75,7 +76,7 @@ margin: 1%;
 
 .reviews_container{
   display: flex;
-  margin-left: 5%;
+  margin-left: 15%;
   margin-top: 2%;
   }
 
@@ -101,7 +102,7 @@ margin-left: 1%;
 /*PICTURE CONTAINER*/
 .contactpics_container {
   display: flex;
-  justify-content: space-around;
+  /* justify-content:space-evenly ; */
   align-items: center;
   /* padding: 1%;  */
   flex-direction: column;
@@ -109,8 +110,8 @@ margin-left: 1%;
 }
 
 .contact_pic {
-  width: 30%; 
-  height: 30%; 
+  width: 40%; 
+  height: 40%; 
   border-radius: 5%; 
   object-fit: cover;
   transition: transform 0.3s ease-in-out;
@@ -121,7 +122,10 @@ margin-left: 1%;
 }
 
 
-
+.banner{
+  max-width: 30%;
+  max-height: 10%;
+}
 
 
 /*Adaptability*/

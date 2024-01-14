@@ -13,9 +13,6 @@ import PrivacyPolicy from "./Components/PrivacyPolicy/PrivacyPolicy";
 import Footer from "./Components/Footer/Footer";
 import AuthContext from "./store/authContext";
 
-//ICONS
-// import "slick-carousel/slick/slick.css";
-// import "slick-carousel/slick/slick-theme.css";
 
 function App() {
   const { state } = useContext(AuthContext);
