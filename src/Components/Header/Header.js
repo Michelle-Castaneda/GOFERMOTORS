@@ -145,7 +145,13 @@ function Header() {
             </span>
           </Link>
 
-          <span className={styles.nav_item}>Financing</span>
+          <Link to="/financing">
+          <span
+              className={`${styles.nav_item} ${
+                location.pathname === "/financing" ? styles.active : ""
+              }`}>Financing</span>
+          </Link>
+
         </span>
         <span className={styles.nav_bottom_right_container}>
           {state.token ? (

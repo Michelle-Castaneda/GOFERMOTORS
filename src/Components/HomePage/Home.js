@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect }  from "react";
 import { Link } from "react-router-dom";
 import styles from "./Home.module.css";
 import heroImage from "../../assets/Hero-img.jpg";
@@ -6,6 +6,16 @@ import aboutUsImage from "../../assets/aboutus.jpg";
 import ContactInfo from "../ContactInfo/ContactInfo";
 
 function Home() {
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://static.elfsight.com/platform/platform.js";
+    script.defer = true;
+    document.head.appendChild(script);
+
+    return () => {
+      document.head.removeChild(script);
+    };
+  }, []); 
   return (
     <div className={styles.home_container}>
       <div className={styles.hero_container}>
@@ -57,7 +67,18 @@ function Home() {
           </div>
           
         </div>
+      
+
+        <div className={styles.reviews_container}>
+        <hr/>
+        <div className="elfsight-app-f758bd66-983b-415b-97cd-0c676468ba9f" data-elfsight-app-lazy>
+</div>
+        </div>
+                <hr/>
+
         <div className={styles.contact_container}>
+                  <hr/>
+
         <ContactInfo className={styles.ContactInfo_Component}/>
         <iframe className={styles.google_map}
                     src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d28633.888531722707!2d-98.1018341!3d26.2215181!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86659f5b93e0b6d5%3A0x948d328f2ce5f191!2sGofer%20Motors%2C%20LLC!5e0!3m2!1sen!2sus!4v1697062032696!5m2!1sen!2sus" 

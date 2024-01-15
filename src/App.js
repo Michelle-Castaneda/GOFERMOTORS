@@ -10,6 +10,7 @@ import Home from "./Components/HomePage/Home";
 import Inventory from "./Components/Inventory/Inventory";
 import Contact from "./Components/ContactUs/ContactUs"
 import PrivacyPolicy from "./Components/PrivacyPolicy/PrivacyPolicy";
+import Financing from "./Components/Financing";
 import Footer from "./Components/Footer/Footer";
 import AuthContext from "./store/authContext";
 
@@ -36,6 +37,7 @@ function App() {
         <Route path="/inventory" element={<Inventory />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/privacyp" element={<PrivacyPolicy />} />
+        <Route path="/financing" element={<Financing />} />
       </Routes>
       <Footer />
     </div>

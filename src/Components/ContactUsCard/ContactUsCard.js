@@ -1,4 +1,4 @@
-/* global grecaptcha */
+/* global ReCAPTCHA */
 
 import React, { useState, useEffect } from "react";
 import axios from "axios";
@@ -11,53 +11,11 @@ const ContactUsCard = () => {
     const [selectedCar, setSelectedCar] = useState('');
     const [successMessage, setSuccessMessage] = useState("");
 
-    const handleRecaptchaVerify = (response) => {
-setVerified(true);
-  };
 
+    const handleRecaptchaVerify = (recaptchaResponse) => {
+        setVerified(true);
+    };
 
-  const handleSubmitRecaptcha = async (e) => {
-    e.preventDefault();
-    grecaptcha.enterprise.ready(async () => {
-        const token = await grecaptcha.enterprise.execute('6LfiHVApAAAAAEOmvfG-Op2teLArraH-lYvBS2N-', { action: 'LOGIN' });
-
-        const requestBody = {
-            event: {
-                token: token,
-                expectedAction: 'submit', 
-                siteKey: '6LfiHVApAAAAAEOmvfG-Op2teLArraH-lYvBS2N-',
-            }
-        };
-
-        const requestBodyString = JSON.stringify(requestBody, null, 2);
-
-        const blob = new Blob([requestBodyString], { type: 'application/json' });
-        const url = window.URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = 'request.json';
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
-        window.URL.revokeObjectURL(url);
-
-        const apiKey = process.env.REACT_APP_RECAPTCHA_API_KEY;
-        const apiUrl = 'https://recaptchaenterprise.googleapis.com/v1/projects/gofer-motors-web-1705258432704/assessments';
-
-        try {
-            const response = await axios.post(apiUrl, requestBody, {
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Api-Key': apiKey,
-                },
-            });
-
-            console.log('POST request successful:', response.data);
-        } catch (error) {
-            console.error('Error sending POST request:', error.response.data);
-        }
-    });
-};
 
     const [formData, setFormData] = useState({
         name: '',
@@ -98,7 +56,7 @@ setVerified(true);
             .then(response => {
 
                 setFormData({
-                    name: '',
+                    firstname: '',
                     lastName: '',
                     phone: '',
                     email: '',
@@ -117,7 +75,7 @@ setVerified(true);
         <form onSubmit={handleSubmit}>
         <div className={styles.contactCard_container}> 
             <input 
-                className={styles.name} 
+                className={styles.firstname} 
                 placeholder="First Name" 
                 name="firstName" 
                 value={formData.name} 
@@ -167,10 +125,15 @@ setVerified(true);
     successMessage && <p className={styles.success_message}>{successMessage}</p>
 }
 <ReCAPTCHA
-        sitekey="6LfiHVApAAAAAEOmvfG-Op2teLArraH-lYvBS2N-" 
-        onChange={handleRecaptchaVerify}
-      />
-            <button className={styles.send_btn} onClick={handleSubmitRecaptcha}>Send</button>
+    sitekey="6Lcp31ApAAAAAPQ-DjIVPvd82diOysWVlgp4G7pL"
+    onChange={recaptchaResponse => handleRecaptchaVerify(recaptchaResponse)}
+/>
+
+
+            <button className={styles.g-recaptcha}
+    type='submit'>
+  Submit
+</button>
         </div>
         </form>
     )

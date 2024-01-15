@@ -95,7 +95,7 @@ Multiple financing options are available, allowing us to tailor a financing solu
 <div className={styles.whyGofer_subtitle}>
     Exceptional Customer Service
 </div>
-<div class={styles.whyGofer_text}>
+<div className={styles.whyGofer_text}>
 Our sales and service team are knowledgeable, approachable, and dedicated to providing exceptional assistance, ensuring that your experience with us is not only informed and friendly but also exceeds your expectations.    </div>
     <br/>
 </div>
