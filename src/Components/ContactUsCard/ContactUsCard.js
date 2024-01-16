@@ -1,4 +1,4 @@
-/* global ReCAPTCHA */
+/* global ReCAPTCHA, grecaptcha */
 
 import React, { useState, useEffect } from "react";
 import axios from "axios";
@@ -10,24 +10,12 @@ const ContactUsCard = () => {
     const [carListings, setCarListings] = useState([]);
     const [selectedCar, setSelectedCar] = useState('');
     const [successMessage, setSuccessMessage] = useState("");
+    const [recaptchaResponse, setRecaptchaResponse] = useState(null);
 
-
-    const handleRecaptchaVerify = (recaptchaResponse) => {
-        setVerified(true);
-    };
-
-
-    const [formData, setFormData] = useState({
-        name: '',
-        lastName: '',
-        phone: '',
-        email: '',
-        comments: ''
-    });
 
     useEffect(() => {
-        axios.get("http://localhost:4000/car_inventory")        
-            .then(response => setCarListings(response.data)) 
+        axios.get("http://localhost:4000/car_inventory")
+            .then(response => setCarListings(response.data))
             .catch(error => {
                 console.error("Error get request for car inventory:", error.response.data);
             });
@@ -40,7 +28,63 @@ const ContactUsCard = () => {
         }));
     };
 
-    const handleSubmit = () => {
+    const handleRecaptchaVerify = (token) => {
+        grecaptcha.enterprise
+            .execute('6Lcp31ApAAAAAPQ-DjIVPvd82diOysWVlgp4G7pL', {
+                action: 'submit',
+            })
+            .then((response) => {
+                setRecaptchaResponse(response);
+                setVerified(true);
+                const actualToken = response;
+                document.getElementById("demo-form").submit();
+            });
+    };
+    
+    
+    const apiKey = process.env.REACT_APP_RECAPTCHA_API_KEY; 
+      const projectId = 'gofer-motors-web-1705258432704';
+      const userAction = 'submit';
+      const token = 'token';
+      
+      
+    const url = `https://recaptchaenterprise.googleapis.com/v1/projects/${projectId}/assessments?key=${apiKey}`;
+
+    axios.post(url, requestData)
+        .then(response => {
+            console.log('Assessment request successful:', response.data);
+        })
+        .catch(error => {
+            console.error('Error sending assessment request:', error.response.data);
+        });
+
+      
+
+    const [formData, setFormData] = useState({
+        name: '',
+        lastName: '',
+        phone: '',
+        email: '',
+        comments: ''
+    });
+
+
+            const requestData = {
+                event: {
+                    token: recaptchaResponse,
+                    expectedAction: userAction,
+                    siteKey: 'https://recaptchaenterprise.googleapis.com/v1/projects/gofer-motors-web-1705258432704/assessments?key=' + apiKey,
+                },
+            };
+        
+            axios.post(url, requestData)
+                .then(response => {
+                    console.log('Assessment request successful:', response.data);
+                })
+                .catch(error => {
+                    console.error('Error sending assessment request:', error.response.data);
+                });
+
         const ContactData = {
             Name: formData.name,
             Last_Name: formData.lastName,
@@ -72,7 +116,7 @@ const ContactUsCard = () => {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form id="demo-form" onSubmit={handleSubmit}>
         <div className={styles.contactCard_container}> 
             <input 
                 className={styles.firstname} 
@@ -124,19 +168,25 @@ const ContactUsCard = () => {
             {
     successMessage && <p className={styles.success_message}>{successMessage}</p>
 }
-<ReCAPTCHA
-    sitekey="6Lcp31ApAAAAAPQ-DjIVPvd82diOysWVlgp4G7pL"
-    onChange={recaptchaResponse => handleRecaptchaVerify(recaptchaResponse)}
-/>
 
 
-            <button className={styles.g-recaptcha}
-    type='submit'>
-  Submit
-</button>
+<ReCAPTCHA>
+sitekey="6Lcp31ApAAAAAPQ-DjIVPvd82diOysWVlgp4G7pL"
+onChange={handleRecaptchaVerify}
+</ReCAPTCHA>
+
+<button disabled={!isVerified} type="submit" 
+    data-sitekey="6Lcp31ApAAAAAPQ-DjIVPvd82diOysWVlgp4G7pL"
+    data-callback='onSubmit'
+    data-action='submit'>
+                    Submit
+                </button>
+
         </div>
+        {successMessage && <p className={styles.success_message}>{successMessage}</p>}
+
         </form>
     )
-};
+;
 
 export default ContactUsCard;
