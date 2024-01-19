@@ -3,16 +3,16 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import React, {useContext, useState}from 'react';
 import SimpleBar from "simplebar-react";
 import 'simplebar-react/dist/simplebar.min.css';
-
-
 import Header from "./Components/Header/Header";
 import Home from "./Components/HomePage/Home";
 import Inventory from "./Components/Inventory/Inventory";
 import Contact from "./Components/ContactUs/ContactUs"
 import PrivacyPolicy from "./Components/PrivacyPolicy/PrivacyPolicy";
-import Financing from "./Components/Financing";
+import Financing from "./Components/Financing/Financing";
 import Footer from "./Components/Footer/Footer";
 import AuthContext from "./store/authContext";
+import BodyTypeSelector from "./Components/BodyTypeSelector/BodyTypeSelector";
+
 
 
 function App() {
@@ -35,6 +35,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/inventory" element={<Inventory />} />
+        <Route path="/inventory/:body_type" element={<BodyTypeSelector />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/privacyp" element={<PrivacyPolicy />} />
         <Route path="/financing" element={<Financing />} />

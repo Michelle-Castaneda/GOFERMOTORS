@@ -11,7 +11,28 @@ const ContactUsCard = () => {
     const [selectedCar, setSelectedCar] = useState('');
     const [successMessage, setSuccessMessage] = useState("");
     const [recaptchaResponse, setRecaptchaResponse] = useState(null);
+    const [formData, setFormData] = useState({
+        name: '',
+        lastName: '',
+        phone: '',
+        email: '',
+        comments: ''
+    });
 
+       
+    const apiKey = process.env.REACT_APP_RECAPTCHA_API_KEY; 
+      const projectId = 'gofer-motors-web-1705258432704';
+      const userAction = 'submit';
+    //   const token = 'token';
+      
+
+    const requestData = {
+        event: {
+            token: recaptchaResponse,
+            expectedAction: userAction,
+            siteKey: 'https://recaptchaenterprise.googleapis.com/v1/projects/gofer-motors-web-1705258432704/assessments?key=' + apiKey,
+        },
+    };
 
     useEffect(() => {
         axios.get("http://localhost:4000/car_inventory")
@@ -38,15 +59,13 @@ const ContactUsCard = () => {
                 setVerified(true);
                 const actualToken = response;
                 document.getElementById("demo-form").submit();
+            })
+            .catch((error) => {
+                console.error('Error verifying ReCAPTCHA:', error);
             });
     };
     
-    
-    const apiKey = process.env.REACT_APP_RECAPTCHA_API_KEY; 
-      const projectId = 'gofer-motors-web-1705258432704';
-      const userAction = 'submit';
-      const token = 'token';
-      
+ 
       
     const url = `https://recaptchaenterprise.googleapis.com/v1/projects/${projectId}/assessments?key=${apiKey}`;
 
@@ -60,22 +79,16 @@ const ContactUsCard = () => {
 
       
 
-    const [formData, setFormData] = useState({
-        name: '',
-        lastName: '',
-        phone: '',
-        email: '',
-        comments: ''
-    });
+    // const [formData, setFormData] = useState({
+    //     name: '',
+    //     lastName: '',
+    //     phone: '',
+    //     email: '',
+    //     comments: ''
+    // });
 
 
-            const requestData = {
-                event: {
-                    token: recaptchaResponse,
-                    expectedAction: userAction,
-                    siteKey: 'https://recaptchaenterprise.googleapis.com/v1/projects/gofer-motors-web-1705258432704/assessments?key=' + apiKey,
-                },
-            };
+         
         
             axios.post(url, requestData)
                 .then(response => {
@@ -95,12 +108,14 @@ const ContactUsCard = () => {
         };
 
         
-        
+        const handleSubmit = (e) => {
+            e.preventDefault();
+            console.log("Form submitted");
         axios.post("http://localhost:4000/contact_information", ContactData)
             .then(response => {
 
                 setFormData({
-                    firstname: '',
+                    name: '',
                     lastName: '',
                     phone: '',
                     email: '',
@@ -121,7 +136,7 @@ const ContactUsCard = () => {
             <input 
                 className={styles.firstname} 
                 placeholder="First Name" 
-                name="firstName" 
+                name="name" 
                 value={formData.name} 
                 onChange={handleInputChange}
             />
@@ -170,14 +185,14 @@ const ContactUsCard = () => {
 }
 
 
-<ReCAPTCHA>
-sitekey="6Lcp31ApAAAAAPQ-DjIVPvd82diOysWVlgp4G7pL"
-onChange={handleRecaptchaVerify}
-</ReCAPTCHA>
+<ReCAPTCHA
+    sitekey="6Lcp31ApAAAAAPQ-DjIVPvd82diOysWVlgp4G7pL"
+    onChange={handleRecaptchaVerify}
+/>
 
 <button disabled={!isVerified} type="submit" 
     data-sitekey="6Lcp31ApAAAAAPQ-DjIVPvd82diOysWVlgp4G7pL"
-    data-callback='onSubmit'
+    data-callback='onChange'
     data-action='submit'>
                     Submit
                 </button>
@@ -186,7 +201,6 @@ onChange={handleRecaptchaVerify}
         {successMessage && <p className={styles.success_message}>{successMessage}</p>}
 
         </form>
-    )
-;
-
+    );
+};
 export default ContactUsCard;

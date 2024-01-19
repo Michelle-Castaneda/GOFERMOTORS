@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
+import { useParams } from 'react-router-dom';
 import styles from "./Inventory.module.css";
 import InventoryCard from "../InventoryCard/InventoryCard";
 import axios from "axios";
@@ -16,6 +17,7 @@ function Inventory() {
   const [make, setMake] = useState("");
   const [soldStatus, setSoldStatus] = useState("Not Sold");
   const [soldSearch, setSoldSearch] = useState("");
+  const { body_type: bodyType } = useParams();
   // const [userdata, setUserData] = useState();
 
   // useEffect(() => {
@@ -119,6 +121,7 @@ function Inventory() {
         <AddInventoryForms cars={cars} getCars={getCars} isOpen={isModalOpen} closeModal={closeModal}></AddInventoryForms>
       </Modal>
       <div className={styles.card_container}>{carResults}</div>
+      <p>Display content for {bodyType} vehicles here</p>
     </div>
   );
 }
