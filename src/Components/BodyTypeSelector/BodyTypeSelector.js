@@ -21,16 +21,21 @@ const BodyTypeSelector = () => {
     { type: 'HATCHBACK', path: hatchback },
   ];
 
+  const handleImageClick = (bodyType) => {
+    console.log(`Navigating to /inventory/${bodyType.toLowerCase()}`);
+  };
+
   return (
-    <div className='bodySelector_container'>
-      <div className='bodyTitle'>SHOP BY BODY STYLE</div>
+    <div className='body_container'>
+      <div className='body_title'>SHOP BY BODY STYLE</div>
       <div style={{ display: 'flex', flexWrap: 'wrap' }}>
         {bodyTypes.map(({ type, path }) => (
-          <Link to={`/inventory/${type.toLowerCase()}`} key={type}>
+          <Link to={`/inventory/${type.toLowerCase()}`} key={type} style={{ textDecoration: 'none' }}>
             <img
               src={path}
               alt={type}
               style={{ width: '150px', height: '100px', cursor: 'pointer' }}
+              onClick={() => handleImageClick(type)}
             />
             <p>{type}</p>
           </Link>

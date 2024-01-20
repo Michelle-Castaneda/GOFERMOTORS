@@ -283,7 +283,7 @@ function Footer() {
       </div>
       <div className={styles.footer_credits}>
         <p className={styles.privacy_rights}>
-          © 2023 Gofer Motors LLC. All rights reserved.
+          © 2024 Gofer Motors LLC. All rights reserved.
         </p>
         <p className={styles.privacy_rights}>
           {" "}

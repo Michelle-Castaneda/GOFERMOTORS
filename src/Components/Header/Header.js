@@ -145,7 +145,7 @@ function Header() {
             </span>
           </Link>
 
-          <Link to="/financing">
+          <Link to="/financing" style={{ textDecoration: "none" }}>
           <span
               className={`${styles.nav_item} ${
                 location.pathname === "/financing" ? styles.active : ""
