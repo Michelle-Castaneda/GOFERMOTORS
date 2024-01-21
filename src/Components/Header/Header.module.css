@@ -15,7 +15,7 @@
     /* align-items: center; */
     justify-content: space-between;
     background-color: var(--primary-color);
-    height: 6vh;
+    height: 8vh;
     padding: 0 1em;
 }
 
@@ -24,7 +24,7 @@
     align-items: center;
     gap: 1em;
     color: white;
-    width: 55%;
+    width: 75%;
     justify-content: space-between;
     padding: .5em;
 }
@@ -45,7 +45,6 @@
     border: none;
     background-color: transparent;
     color: inherit;
-    /* width: 100%; */
     font-size: 1em;
     display: flex;
     cursor: pointer;
@@ -53,7 +52,7 @@
 }
 .header_top_right_phone_container{
     text-decoration: none;
-    width: 28%;
+    /* width: 10vw; */
     display: flex;
     justify-content: space-between;
     text-decoration: none;
@@ -65,7 +64,7 @@
 }
 .header_top_right_phone{
     text-decoration: none;
-    /* width: 85%; */
+    width: 100%;
     display: flex;
     justify-content: space-between;
     text-decoration: none;
@@ -83,7 +82,7 @@
 }
 .social_icon{
     color: var(--thecolor);
-    font-size: 2rem;
+    font-size: 2.2rem;
     cursor: pointer;
 }
 .social_icon:hover{
@@ -91,7 +90,7 @@
 }
 
 .header_logo {
-    height: 6vh;
+    height: 8vh;
     width: 8vw;
     transition: opacity 0.3s ease;
 }
@@ -109,7 +108,7 @@
     align-items: center;
     justify-content: space-between;
     background-color: var(--light-gray);
-    height: 5vh;
+    height: 7vh;
 }
 .nav_bottom_right_container{
     display: flex;
@@ -138,19 +137,20 @@
 }
 
 .login_img {
-    height: 23px;
+    height: 2vw;
+    width: 2vw;
 }
 
 .nav_item_btn {
     transition: color 0.3s ease;
     cursor: pointer;
     color: var(--primary-color);
-    font-size: 20x;
+    font-size: 20%;
     text-align: center;
     font-weight: 550;
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 1%;
     background-color: transparent;
     border: none;
     font-size: 1em;
@@ -160,15 +160,15 @@
     transition: color 0.3s ease;
     cursor: pointer;
     color: var(--tiertiary-color);
-    font-size: 20x;
+    font-size: 20%;
     text-align: center;
     font-weight: 800;
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 1%;
     background-color: transparent;
     border: none;
-    font-size: 16px;
+    font-size: 20%;
 }
 
 .nav_item_btn:hover {
@@ -191,6 +191,10 @@
 
 .header_login:hover {
     background-color: #e67d2248;
+}
+
+.header_icon{
+    padding:2%;
 }
 
 @keyframes glowing {

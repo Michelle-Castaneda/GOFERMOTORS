@@ -28,8 +28,8 @@ const BodyTypeSelector = () => {
 
   return (
     <div className={styles.body_container}>
-      <div className='body_title'>SHOP BY BODY STYLE</div>
-      <div>
+      <div className={styles.body_title}>SHOP BY BODY STYLE</div>
+      <div className={styles.body_items}>
         {bodyTypes.map(({ type, path }) => (
           <Link to={`/inventory/${type.toLowerCase()}`} key={type} style={{ textDecoration: 'none' }}>
             <img

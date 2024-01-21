@@ -45,12 +45,13 @@ function Home() {
           </Link>
         </div>
       </div>
-      
-<QuickSearch/>
-<BodyTypeSelector/>
 
+      {/* <div className={styles.inventory_search_container}></div> */}
 
-      <div className={styles.inventory_search_container}></div>
+      <div className={styles.search_container}>
+  <QuickSearch styles={styles.quickSearch_container} />
+  <BodyTypeSelector styles={styles.bodySelector_container} />
+</div>
 
       <div>
         <div className={styles.about_us_container}>

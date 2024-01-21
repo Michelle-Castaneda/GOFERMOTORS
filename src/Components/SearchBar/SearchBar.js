@@ -122,6 +122,7 @@ function SearchBar({
                   return <option value={car.year}>{car.year}</option>;
                 })}
             </select>
+            
             <span className="radio-sold-btns-container">
               <input
                 onChange={() => setSoldStatus("Sold")}

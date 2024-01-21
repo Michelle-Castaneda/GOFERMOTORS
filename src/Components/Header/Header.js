@@ -66,26 +66,30 @@ function Header() {
                 Tower Rd Alamo, Texas, United States
               </button>
             </span>
+
             <span className={styles.header_top_right_phone_container}>
               <a
                 href={`tel:${phoneNumber}`}
                 className={styles.header_top_right_phone}
               >
-                <FaPhoneAlt />
+                <FaPhoneAlt className={styles.header_icon} />
                 (956) 258-5021
               </a>
             </span>
+
             <span className={styles.header_top_right_phone_container}>
               <span                
                 className={styles.header_top_right_phone}
                 onClick={handleWhatsAppClick}
               >
-                <FaWhatsapp size={20}
+                <FaWhatsapp className={styles.header_icon}
                 onClick={handleWhatsAppClick} />
                 (956) 533 - 8752
               </span>
             </span>
+
           </span>
+
           <div className={styles.social_icon_container}>
             <a
               href="https://www.facebook.com/profile.php?id=100094081966775"
