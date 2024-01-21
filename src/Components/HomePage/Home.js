@@ -8,6 +8,7 @@ import aboutUsImage from "../../assets/aboutus.jpg";
 import CircularImage from "../CircularImage/CircularImage";
 import ContactInfo from "../ContactInfo/ContactInfo";
 import BodyTypeSelector from "../BodyTypeSelector/BodyTypeSelector";
+import QuickSearch from "../QuickSearch/QuickSearch";
 
 function Home() {
   useEffect(() => {
@@ -44,7 +45,8 @@ function Home() {
           </Link>
         </div>
       </div>
-
+      
+<QuickSearch/>
 <BodyTypeSelector/>
 
 

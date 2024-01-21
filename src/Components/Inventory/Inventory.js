@@ -7,6 +7,7 @@ import SearchBar from "../SearchBar/SearchBar";
 import AuthContext from "../../store/authContext";
 import Modal from "../Modal/Modal";
 import AddInventoryForms from "./AddInventoryForms";
+import QuickSearch from "../QuickSearch/QuickSearch";
 
 
 function Inventory() {
@@ -78,6 +79,13 @@ function Inventory() {
       const modelSearch = model.toLowerCase();
       const statusSearch = String(car.sold);
 
+      const handleQuickSearch = (searchParams) => {
+        console.log("Quick Search Parameters:", searchParams);
+        setMake(searchParams.make);
+        setModel(searchParams.model);
+        setYear(searchParams.year);
+      };
+
       return (
         (carMake.includes(makeSearch) || !makeSearch) &&
         (carModel.includes(modelSearch) || !modelSearch) &&
@@ -102,7 +110,7 @@ function Inventory() {
         }   
       </h3>
 
-      <SearchBar
+      {/* <SearchBar
         cars={cars}
         setMake={setMake}
         make={make}
@@ -112,7 +120,10 @@ function Inventory() {
         setModel={setModel}
         soldStatus={soldStatus}
         setSoldStatus={setSoldStatus}
-      />
+      /> */}
+
+      <QuickSearch/>
+      
       {state.token && state.isadmin === true || state.isadmin === "true" ? (
        <button className="add-inventory" onClick={openModal}>Add Inventory</button>
         // : ''}

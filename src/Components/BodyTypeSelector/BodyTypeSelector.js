@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import styles from "./BodyTypeSelector.module.css";
 import passenger from '../../assets/body_types/passenger.png';
 import pickup from '../../assets/body_types/pickup.png';
 import sedan from '../../assets/body_types/sedan.png';
@@ -26,9 +27,9 @@ const BodyTypeSelector = () => {
   };
 
   return (
-    <div className='body_container'>
+    <div className={styles.body_container}>
       <div className='body_title'>SHOP BY BODY STYLE</div>
-      <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+      <div>
         {bodyTypes.map(({ type, path }) => (
           <Link to={`/inventory/${type.toLowerCase()}`} key={type} style={{ textDecoration: 'none' }}>
             <img
