@@ -12,6 +12,8 @@ import Financing from "./Components/Financing/Financing";
 import Footer from "./Components/Footer/Footer";
 import AuthContext from "./store/authContext";
 import BodyTypeSelector from "./Components/BodyTypeSelector/BodyTypeSelector";
+import QuickSearch from "./Components/QuickSearch/QuickSearch";
+
 
 
 
@@ -39,6 +41,8 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/privacyp" element={<PrivacyPolicy />} />
         <Route path="/financing" element={<Financing />} />
+        <Route path="/quickSearch" element={<QuickSearch />} />
+
       </Routes>
       <Footer />
     </div>

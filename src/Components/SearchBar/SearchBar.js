@@ -54,6 +54,8 @@ function SearchBar({
         {/* <div className="make-input-container"> */}
         {state.isadmin || state.isadmin === "true" ? (
           <span className="year-container">
+           
+           
             <select
               onChange={(e) => setMake(e.target.value)}
               name="make"
@@ -156,6 +158,7 @@ function SearchBar({
             <label className="text" htmlFor="notsold">NOT SOLD</label>
         </div> */}
           </span>
+          
         ) : (
           <span className="year-container">
             <input
@@ -208,7 +211,7 @@ function SearchBar({
       /> */}
 
         <button
-          className="filter_btn"
+          className={StyleS.filter_btn}
           onClick={() => {
             setYear("");
             setModel("");
