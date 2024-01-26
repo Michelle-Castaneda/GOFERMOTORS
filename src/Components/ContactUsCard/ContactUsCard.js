@@ -173,6 +173,7 @@ const ContactUsCard = () => {
                      {car.make} {car.model} ({car.year})</option>
                 ))}
             </select>
+            
             <textarea 
                 className={styles.comments} 
                 placeholder="Comments"

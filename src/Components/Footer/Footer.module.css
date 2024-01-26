@@ -57,9 +57,9 @@ body, p {
 
 .footer_credits{
     /* display: flex; */
-    margin-top: -1.5vh;
+    margin-top: -1vh;
     margin-left: auto;
-    padding-right: 1vw;
+    padding-right: 6%;
     font-size: x-small;
     text-align: right;
 }
@@ -231,4 +231,3 @@ body, p {
 .whats_app_tag:hover{
     color: var(--secondary-color);
 }
-
