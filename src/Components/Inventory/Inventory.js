@@ -20,6 +20,8 @@ function Inventory() {
   const [soldSearch, setSoldSearch] = useState("");
   const { body_type: bodyType } = useParams();
   // const [userdata, setUserData] = useState();
+  const [filteredCars, setFilteredCars] = useState([]);
+
 
   // useEffect(() => {
   //   if (state.userId) {
@@ -84,6 +86,8 @@ function Inventory() {
         setMake(searchParams.make);
         setModel(searchParams.model);
         setYear(searchParams.year);
+        setFilteredCars(searchParams);
+
       };
 
       return (

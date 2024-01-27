@@ -10,11 +10,14 @@ const QuickSearch = () => {
   const [carListings, setCarListings] = useState([]);
   const [minPrice, setMinPrice] = useState("");
   const [maxPrice, setMaxPrice] = useState("");
+  const [filteredCars, setFilteredCars] = useState([]);
 
 
   useEffect(() => {
     axios.get("http://localhost:4000/car_inventory")
-      .then(response => setCarListings(response.data))
+      .then(response => {
+        setCarListings(response.data);
+  })
       .catch(error => {
         console.error("Error get request for car inventory:", error.response.data);
       });
@@ -32,6 +35,7 @@ const QuickSearch = () => {
           (!minPrice || parseInt(car.price) >= parseInt(minPrice)) &&
           (!maxPrice || parseInt(car.price) <= parseInt(maxPrice))
       );
+      setFilteredCars(filteredCars);
 
       navigate("/inventory", {
         state: { make, model, year, minPrice, maxPrice },
@@ -45,11 +49,13 @@ const QuickSearch = () => {
       setMinPrice("");
       setMaxPrice("");
     } catch (error) {
-      console.error("There was an error fetching the cars data", error);
+      console.error("There was an error handling the search", error);
     }
   };
 
-
+  const yearsObj = {};
+  const makeObj = {};
+  const modelObj = {};
 
   return (
     <div className={styles.quickSearch_container}>
@@ -62,40 +68,69 @@ const QuickSearch = () => {
           id="make"
         >
           <option value="">Select Make</option>
-          {carListings.map((car) => (
-            <option key={car.car_id} value={car.make}>
-              {car.make}
-            </option>
-          ))}
+          {carListings
+  .filter((car) => {
+    if (makeObj[car.make]) {
+      return false;
+    }
+    makeObj[car.make] = true;
+    return true;
+  })
+  .sort((a, b) => a.make.localeCompare(b.make))
+  .map((car) => (
+    <option key={car.car_id} value={car.make}>
+      {car.make}
+    </option>
+  ))}
         </select>
 
         <select
-          onChange={(e) => setModel(e.target.value)}
-          name="model"
-          value={model}
-          id="model"
-        >
-          <option value="">Select Model</option>
-          {carListings.map((car) => (
-            <option key={car.car_id} value={car.model}>
-              {car.model}
-            </option>
-          ))}
-        </select>
+  onChange={(e) => setModel(e.target.value)}
+  name="model"
+  value={model}
+  id="model"
+>
+  <option value="">Select Model</option>
+  {carListings
+    .filter((car) => {
+      if (modelObj[car.model]) {
+        return false;
+      }
+      modelObj[car.model] = true;
+      return true;
+    })
+    .sort((a, b) => a.model.localeCompare(b.model))
+    .map((car) => (
+      <option key={car.car_id} value={car.model}>
+        {car.model}
+      </option>
+    ))}
+</select>
 
-        <select
-          onChange={(e) => setYear(e.target.value)}
-          name="year"
-          value={year}
-          id="year"
-        >
-          <option value="">Select Year</option>
-          {carListings.map((car) => (
-            <option key={car.car_id} value={car.year}>
-              {car.year}
-            </option>
-          ))}
-        </select>
+
+<select
+  onChange={(e) => setYear(e.target.value)}
+  name="year"
+  value={year}
+  id="year"
+>
+  <option value="">Select Year</option>
+  {carListings
+    .filter((car) => {
+      if (yearsObj[car.year]) {
+        return false;
+      }
+      yearsObj[car.year] = true;
+      return true;
+    })
+    .sort((a, b) => a.year - b.year)
+    .map((car) => (
+      <option key={car.car_id} value={car.year}>
+        {car.year}
+      </option>
+    ))}
+</select>
+
       </div>
 
       <div className={styles.input_price}>
@@ -123,5 +158,6 @@ const QuickSearch = () => {
     </div>
   );
 }
+
 
 export default QuickSearch;
