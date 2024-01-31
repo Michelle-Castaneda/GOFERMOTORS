@@ -1,7 +1,8 @@
 import React, { useContext } from "react";
-import "./SearchBar.css";
 import AuthContext from "../../store/authContext";
 // import axios from "axios";
+import styles from "./SearchBar.module.css";
+
 
 function SearchBar({
   model,
@@ -211,7 +212,7 @@ function SearchBar({
       /> */}
 
         <button
-          className={StyleS.filter_btn}
+          className={styles.filter_btn}
           onClick={() => {
             setYear("");
             setModel("");

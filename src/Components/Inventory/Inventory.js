@@ -8,7 +8,9 @@ import AuthContext from "../../store/authContext";
 import Modal from "../Modal/Modal";
 import AddInventoryForms from "./AddInventoryForms";
 import QuickSearch from "../QuickSearch/QuickSearch";
+import { useLocation } from 'react-router-dom';
 
+  
 
 function Inventory() {
   const { state, dispatch } = useContext(AuthContext);
@@ -20,7 +22,11 @@ function Inventory() {
   const [soldSearch, setSoldSearch] = useState("");
   const { body_type: bodyType } = useParams();
   // const [userdata, setUserData] = useState();
-  const [filteredCars, setFilteredCars] = useState([]);
+  // const [filteredCars, setFilteredCars] = useState([]);
+  const location = useLocation();
+  const filteredCarsFromLocation = location.state?.filteredCars || [];
+  const [filteredCars, setFilteredCars] = useState(location.state?.filteredCars || []);
+  const [showQuickSearch, setShowQuickSearch] = useState(false);
 
 
   // useEffect(() => {
@@ -72,6 +78,7 @@ function Inventory() {
     }
   }, [soldStatus, setSoldSearch]);
 
+  
   const carResults = cars
     .filter((car) => {
       const carMake = car.make.toLowerCase();
@@ -87,6 +94,13 @@ function Inventory() {
         setModel(searchParams.model);
         setYear(searchParams.year);
         setFilteredCars(searchParams);
+
+        const carResults = filteredCars.map((car) => (
+          <li key={car.id}>
+            {car.make} - {car.model} - {car.year} - ${car.price}
+          </li>
+        ));
+        
 
       };
 
@@ -114,7 +128,7 @@ function Inventory() {
         }   
       </h3>
 
-      {/* <SearchBar
+      <SearchBar
         cars={cars}
         setMake={setMake}
         make={make}
@@ -124,9 +138,9 @@ function Inventory() {
         setModel={setModel}
         soldStatus={soldStatus}
         setSoldStatus={setSoldStatus}
-      /> */}
+      />
 
-      <QuickSearch/>
+      {/* <QuickSearch/> */}
       
       {state.token && state.isadmin === true || state.isadmin === "true" ? (
        <button className="add-inventory" onClick={openModal}>Add Inventory</button>
@@ -136,8 +150,10 @@ function Inventory() {
         <AddInventoryForms cars={cars} getCars={getCars} isOpen={isModalOpen} closeModal={closeModal}></AddInventoryForms>
       </Modal>
       <div className={styles.card_container}>{carResults}</div>
+
       <p>Display content for {bodyType} vehicles here</p>
     </div>
+   
   );
 }
 
