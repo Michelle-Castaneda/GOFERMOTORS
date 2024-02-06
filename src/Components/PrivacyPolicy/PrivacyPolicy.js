@@ -8,7 +8,7 @@ const PrivacyPolicy = () => {
 
 <p className={styles.privacy_title}>Privacy Policy for Gofer Motors LLC</p>
 
-<p className={styles.privacy_date}> Last Update: January 2024</p>
+<p className={styles.privacy_date}> Last Update: February 2024</p>
 
 <p className={styles.privacy_thankyou}>Thank you for visiting Gofer Motos LLC website.</p> 
 

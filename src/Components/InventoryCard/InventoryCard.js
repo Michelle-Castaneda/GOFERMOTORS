@@ -11,7 +11,7 @@ function InventoryCard({ car, getCars }) {
 
   // console.log(car.make)
 
-  const carImage = require(`../../assets/car_images/${car.make}_${car.model}.jpg`);
+  const carImage = require(`../../assets/car_images/${car.stock_number}.jpeg`);
   
 
   const handleEditClick = () => {

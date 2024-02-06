@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
 import styles from "./ContactUs.module.css";
-import ContactUsCard from "../ContactUsCard/ContactUsCard";
+// import ContactUsCard from "../ContactUsCard/ContactUsCard";
 import ContactInfo from "../ContactInfo/ContactInfo";
 import test_drive from "../../assets/contact_us_images/test_drive.jpg";
 import test_drive2 from "../../assets/contact_us_images/test_drive2.jpg";
 import customer_shaking_hands from "../../assets/contact_us_images/customer_shaking_hands.jpg";
-
+import Appointment from "../Appointment/Appointment"
 
 function ContactUs () {
     useEffect(() => {
@@ -38,7 +38,7 @@ function ContactUs () {
                 </div>
 
                 <hr/>
-
+{/* 
         <div className={styles.contactVisitPics}>
                 <div className={styles.visit_container}>
 
@@ -55,7 +55,7 @@ function ContactUs () {
              </div>
              <br/>
 
-             <ContactUsCard className={styles.contactUsCard_Component} />
+             
 
         </div>
              <br/>
@@ -64,9 +64,10 @@ function ContactUs () {
         <div className={styles.contactpics_container}>
             <img className={styles.contact_pic} src={test_drive} alt="people talking"/>
             <img className={styles.contact_pic} src={test_drive2} alt="woman driving"/>
-            {/* <img className={styles.contact_pic} src={test_drive2} alt="woman driving2"/> */}
+            <img className={styles.contact_pic} src={test_drive2} alt="woman driving2"/>
        </div>
-</div>
+</div> */}
+<Appointment />
        <hr/>
        <br/>
        <div className={styles.whyGofer_container}>

@@ -21,9 +21,9 @@ module.exports = {
                         car_id SERIAL PRIMARY KEY,
                         make VARCHAR(100),
                         model VARCHAR(30),
-                        sticker_price INTEGER,
+                        sticker_price TEXT,
                         year INTEGER,
-                        mileage INTEGER,
+                        mileage VARCHAR(20),
                         color VARCHAR(20),
                         interior_color VARCHAR(20),
                         body_type VARCHAR(20),
@@ -48,19 +48,20 @@ module.exports = {
                     
                     INSERT INTO car_inventory ( make, model, sticker_price, year, mileage, color, interior_color, body_type, title, engine, vin_number, stock_number, description) 
                     VALUES 
-                    ('Dodge', 'Journey', 5500, 2014, 2300, 'Red', 'Black', 'Sedan', 'Clean', 'I3', '123456789', '6789', 'Had just one owner and has many upgrades'),
-                    ('Ford', 'Escape', 6500, 2018, 95500, 'Black', 'Tan', 'SUV/Crossover', 'Clean', 'Hybrid', '1236547', '6547', 'This compact SUV is great for weekend getaways!'),
-                    ('Kia', 'Rio', 6900, 2015, 200500, 'Grey', 'Black', 'Pick up Truck', 'Clean', 'H4', '8956327', '6327', 'Had just one owner and has many upgrades'),
-                    ('Buick', 'Encore', 4500, 2014, 290000, 'Black', 'Black', 'Minivan', 'Clean', 'I4', '7458961', '8961', 'Had just one owner and has many upgrades'),
-                    ('Buick', 'Verano', 7400, 2014, 150000, 'Grey', 'Black', 'Sedan', 'Clean', 'I4', '1254896', '4896', 'Had just one owner and has many upgrades'),
-                    ('Dodge', 'Dart', 6900, 2016, 198458, 'White', 'Black', 'Sedan', 'Clean', 'K5', '56487945', '7945', 'Had just one owner and has many upgrades'),
-                    ('Nissan', 'Altima', 6500, 2014, 189400, 'White', 'Black', 'Sedan', 'na', 'Hybrid', '1235469', '5469', 'Had just one owner and has many upgrades'),
-                    ('Hyundai', 'Elantra', 5800, 2017, 152400, 'Grey', 'Black', 'Convertible', 'Clean', 'V6', '5412378', '2378', 'Had just one owner and has many upgrades'),
-                    ('BMW', '328', 4500, 2015, 231000, 'White', 'Black', 'Coupe', 'Clean', 'V6', '6543781', '3781', 'Had just one owner and has many upgrades'),
-                    ('BMW', 'X3', 4500, 2017, '143500', 'Grey', 'Black', 'SUV/Crossover', 'Clean', 'V8', '6751983', '1983', 'Had just one owner and has many upgrades'),
-                    ('Range Rover', 'Evoque', 4500, 2013, 182500, 'Blue', 'Grey', 'Wagon', 'Mended', 'V6 Turbo', '4571827', '1827', 'Had just one owner and has many upgrades'),
-                    ('Mitsubishi', 'Mirage', 4500, 2019, 95000, 'Blue', 'Tan', 'Hatchback', 'Clean', 'V6', '4478145', '8145', 'Had just one owner and has many upgrades');
-  
+                    ('Kia', 'Forte', '$2,000-$3,000', 2018, '57,000', 'Black', 'Black', 'Sedan', 'Clean Title', '2', '3KPFK4A72JE180386', '180386', 'Working AC'),
+                    ('Jeep', 'Renegade', '$2,500-$3,500', 2018, '132,048', 'Green', 'Black', 'SUV', 'Clean Title', '2.4', 'ZACCJABB5JPH60547', 'H60547', 'Working AC'),
+                    ('Mitsubishi', 'Mirage', '$1,500', 2019, '50,796', 'Red', 'Black', 'Hatchback', 'Clean Title', '1.2', 'ML32A3HJ9KH010988', '010988', 'Working AC'),
+                    ('Mitsubishi', 'Mirage G4', '$1,500', 2021, '85,931', 'Silver', 'Beige', 'Sedan', 'Clean Title', '1.2', 'ML32FUFJ7MHF00992', 'F00992', 'Working AC'),
+                    ('Mitsubishi', 'Mirage G4', '$1,500', 2020, '66,000', 'Blue', 'Black', 'Sedan', 'Clean Title', '1.2', 'ML32F4FJXLHF02685', 'F02685', 'Working AC'),
+                    ('Ford', 'Escape', '$2,000', 2014, '70,000', 'Gray', 'Gray', 'SUV', 'Clean Title', '1.6', 'FMCU0GX4EUC04087', 'C04087', 'Working AC'),
+                    ('Chevrolet', 'Trax', '$2,000', 2017, '164,247', 'Burgundy', 'Black', 'Sedan', 'Clean Title', '1.4', '3GNCJKSB6HL265645', '265645', 'Working AC'),
+                    ('Buick', 'Encore', '$XXXX', 2016, '122,135', 'Blue', 'Black', 'SUV', 'Clean Title', '1.4', 'KL4CJ1SM0GB614622', '614622', 'Working AC'),
+                    ('Jeep', 'Renegade', '$2,500', 2020, '84,288', 'Black', 'Black', 'Sedan', 'Clean Title', '2.4', 'ZACNJABB6LPL50638', 'L50638', 'Working AC'),
+                    ('BMW', '328i', '$2,900', 2015, '92,314', 'Black', 'Black', 'Sedan', 'Clean Title', 'XXXX', 'WBA3ZA5G56FNP34935', 'P34935', 'Working AC');
+                    
+                    INSERT INTO contact_information (first_name, last_name, phone, email, comments, car_id)
+                    VALUES ('Toby', 'Flenderson', '+11397857411', 'tobyflenderson@gmail.com', '', 9);
+                    
           `
         )
         .then(() => {
