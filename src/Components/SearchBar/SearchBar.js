@@ -47,14 +47,14 @@ function SearchBar({
   const modelObj = {};
 
   return (
-    <div className="search">
-      <div className="searchContainer">
+    <div className={styles.search}>
+      <div className={styles.searchContainer}>
         
       </div>
-      <div className="input-container">
+      <div className={styles.input_container}>
         {/* <div className="make-input-container"> */}
         {state.isadmin || state.isadmin === "true" ? (
-          <span className="year-container">
+          <span className={styles.year_container}>
            
            
             <select
@@ -126,7 +126,7 @@ function SearchBar({
                 })}
             </select>
             
-            <span className="radio-sold-btns-container">
+            <span className={styles.radio_sold_btns_container}>
               <input
                 onChange={() => setSoldStatus("Sold")}
                 type="radio"
@@ -135,7 +135,7 @@ function SearchBar({
                 name="status"
                 value="Sold"
               />
-              <label className="text" htmlFor="sold">
+              <label className={styles.text} htmlFor="sold">
                 SOLD
               </label>
 
@@ -148,7 +148,7 @@ function SearchBar({
                 value="Not Sold"
                 defaultChecked
               />
-              <label className="text" htmlFor="notsold">
+              <label className={styles.text} htmlFor="notsold">
                 NOT SOLD
               </label>
             </span>
@@ -161,7 +161,7 @@ function SearchBar({
           </span>
           
         ) : (
-          <span className="year-container">
+          <span className={styles.year_container}>
             <input
               type="text"
               placeholder="Make"
@@ -200,7 +200,7 @@ function SearchBar({
           </span>
         )}
 
-        <div className="year-container">
+        <div className={styles.year_container}>
           {/* <div className="year-title">Select Year</div> */}
         </div>
 

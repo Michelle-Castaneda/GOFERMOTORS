@@ -66,7 +66,7 @@
     margin: 10px 0;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   }
-  .input-container{
+  .input_container{
     display: flex;
     /* width: 70%; */
     align-items: center;
@@ -81,7 +81,7 @@
     cursor: pointer;
   }
 
-  .year-container>select{
+  .year_container>select{
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 4px;
@@ -95,16 +95,13 @@
     cursor: pointer;
 }
 
-.radio-sold-btns-container {
-
-}
 /* .w_so_top_left_container{
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 } */
 
-.radio-sold-btns-container label{
+.radio_sold_btns_container label{
 justify-content: center;
 align-items: center;
 padding: 10px 10px;
@@ -119,7 +116,7 @@ font-size: medium;
 font-weight: bold;
 margin-right: 10px;
 }
-.radio-sold-btns-container label:hover{
+.radio_sold_btns_container label:hover{
   justify-content: center;
   align-items: center;
   padding: 10px 10px;
@@ -135,18 +132,18 @@ margin-right: 10px;
   margin-right: 10px;
 }
 
-.radio-sold-btns-container input[type="radio"]{
+.radio_sold_btns_container input[type="radio"]{
   display: none;
   cursor: pointer;
 }
 
-.radio-sold-btns-container input[type="radio"]:checked + label {
+.radio_sold_btns_container input[type="radio"]:checked + label {
   border: #d6a30bd0;
   background-color: #d6a30bd0 !important;;
   color: white;
   cursor: pointer;
 }
-.radio-sold-btns-container input[type="radio"]:checked + label:hover{
+.radio_sold_btns_container input[type="radio"]:checked + label:hover{
   border: #d6a30bd0;
   background-color: #d6a30bd0 !important;;
   color: white;

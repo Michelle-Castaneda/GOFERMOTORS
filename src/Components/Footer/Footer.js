@@ -169,7 +169,7 @@ function Footer() {
               </a>
               <a
                 href="https://www.instagram.com/gofermotorsllc/"
-                target="_blank"
+                target="_blank" 
                 rel="noopener noreferrer"
               >
                 <FaInstagram className={styles.social_icon} />
@@ -287,10 +287,10 @@ function Footer() {
         </p>
         <p className={styles.privacy_rights}>
           {" "}
-          Developed by{" "}
-          <a href="https://katrynayaworski.github.io" target="_blank">
+          Developed by{" "}Michelle Castaneda & {" "}
+          <a href="https://katrynayaworski.github.io" target="_blank" rel="noopener noreferrer">
             Katryna Yaworski
-          </a> & Michelle Castaneda
+          </a> 
         </p>
       </div>
     </div>

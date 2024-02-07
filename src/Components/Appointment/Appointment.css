@@ -5,7 +5,7 @@
 .appointment_container {
     display: flex;
     justify-content: space-between;
-    align-items: start;
+    align-items: flex-start;
     padding: 20px;
     max-width: 1200px;
     margin: 0 auto;

@@ -56,10 +56,10 @@ function Inventory() {
     axios
       .get("http://localhost:4000/car_inventory")
       .then((response) => {
-        console.log("Cars Data", response.data);
+        // console.log("Cars Data", response.data);
         setCars(response.data);
-        console.log('#####')
-        console.log(state)
+        // console.log('#####')
+        // console.log(state)
       })
       .catch((error) => {
         console.error("Error fetching cars data: ", error);
@@ -68,7 +68,7 @@ function Inventory() {
   useEffect(() => {
     getCars();
   }, [state.userId]);
-  console.log("Cars Map Data", cars);
+  // console.log("Cars Map Data", cars);
 
   useEffect(() => {
     if (soldStatus === 'Sold') {

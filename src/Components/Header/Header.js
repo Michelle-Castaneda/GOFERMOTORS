@@ -73,7 +73,7 @@ function Header() {
                 className={styles.header_top_right_phone}
               >
                 <FaPhoneAlt className={styles.header_icon} />
-                (956) 258-5021
+                {" "}(956) 258-5021
               </a>
             </span>
 
@@ -84,7 +84,7 @@ function Header() {
               >
                 <FaWhatsapp className={styles.header_icon}
                 onClick={handleWhatsAppClick} />
-                (956) 533 - 8752
+               {" "} (956) 533 - 8752
               </span>
             </span>
 
@@ -180,8 +180,8 @@ function Header() {
               id="nav_btn"
             >
               {" "}
-              <img className={styles.login_img} src={loginImg} alt="" /> Log in
-              / Register
+              {/* <img className={styles.login_img} src={loginImg} alt="" /> Log in
+              / Register */}
             </span>
           )}
 

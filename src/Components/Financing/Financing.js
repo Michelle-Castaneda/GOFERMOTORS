@@ -1,7 +1,8 @@
 import React from "react";
-import styles from "./Financing.module.css"
-import ContactInfo from "../ContactInfo/ContactInfo"
-import ContactUsCard from "../ContactUsCard/ContactUsCard"
+import styles from "./Financing.module.css";
+// import ContactInfo from "../ContactInfo/ContactInfo"
+import Appointment from "../Appointment/AppointmentCard";
+
 
 const Financing = () => {
 
@@ -31,8 +32,8 @@ Pre-requesites
 
 <div>Contact Us For More Information</div>
 
-<ContactUsCard className={styles.contact_financing} />
-<ContactInfo/>
+{/* <ContactUsCard className={styles.contact_financing} /> */}
+<Appointment/>
 
 
 </div>
