@@ -89,7 +89,7 @@ function Inventory() {
       const statusSearch = String(car.sold);
 
       const handleQuickSearch = (searchParams) => {
-        console.log("Quick Search Parameters:", searchParams);
+        // console.log("Quick Search Parameters:", searchParams);
         setMake(searchParams.make);
         setModel(searchParams.model);
         setYear(searchParams.year);

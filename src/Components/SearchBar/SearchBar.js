@@ -40,7 +40,7 @@ function SearchBar({
 
   // const filteredCars = cars.filter(car => car.name.toLowerCase().includes(query.toLowerCase()));
 
-  console.log(`CARS+++++++${JSON.stringify(cars)}`);
+  // console.log(`CARS+++++++${JSON.stringify(cars)}`);
 
   const yearsObj = {};
   const makeObj = {};

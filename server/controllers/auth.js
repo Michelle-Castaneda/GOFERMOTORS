@@ -34,7 +34,7 @@ const login = async (req, res) => {
       if (isAuthenticated) {
         const token = createToken(foundUser.username, foundUser.isadmin, foundUser.user_id);
         const exp = Date.now() + 1000 * 60 * 60 * 48;
-        console.log(foundUser);
+        // console.log(foundUser);
         const data = {
           username: foundUser.username,
           isadmin: foundUser.isadmin,
@@ -96,8 +96,8 @@ const register = async (req, res) => {
         token: token,
         exp: exp,
       };
-      console.log(newUser);
-      console.log(data);
+      // console.log(newUser);
+      // console.log(data);
       res.status(200).send(data);
     }else {
         const salt = bcrypt.genSaltSync(10);
@@ -121,8 +121,8 @@ const register = async (req, res) => {
           token: token,
           exp: exp,
         };
-        console.log(newUser);
-        console.log(data);
+        // console.log(newUser);
+        // console.log(data);
         res.status(200).send(data);
       }
   } catch (error) {

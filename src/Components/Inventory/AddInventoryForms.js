@@ -65,12 +65,12 @@ const AddInventoryForms = ({ closeModal, getCars, cars }) => {
     };
     if (values.make === "" || values.model === "" || values.year === "") {
       setError("Please enter a value for all fields*");
-      console.log(values);
+      // console.log(values);
     } else {
       if (values.image_url === "") {
         values.image_url = image;
       }
-      console.log(values);
+      // console.log(values);
       axios
         .post(`http://localhost:4000/car_inventory`, values, {})
         .then((res) => {
@@ -81,7 +81,7 @@ const AddInventoryForms = ({ closeModal, getCars, cars }) => {
           // setFieldValue("description", "");
           setShowTable(true);
           console.log("*****");
-          console.log(inventory);
+          // console.log(inventory);
         });
     }
   };

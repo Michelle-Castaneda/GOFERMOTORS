@@ -29,7 +29,7 @@ const Login = ({ closeModal }) => {
       .post(register ? "http://localhost:4000/register" : "http://localhost:4000/login", body)
       .then((res) => {
         dispatch({ type: "LOGIN", payload: res.data });
-        console.log(res.data)
+        // console.log(res.data)
         closeModal();
       })
       .catch((err) => {
