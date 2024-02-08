@@ -9,9 +9,7 @@ import trashImage from "../../assets/recycle-bin.png"
 function InventoryCard({ car, getCars }) {
   const { state } = useContext(AuthContext);
 
-  // console.log(car.make)
-
-  const carImage = require(`../../assets/car_images/${car.stock_number}.jpeg`);
+ const carImage = require(`../../assets/car_images/${car.stock_number}.jpeg`);
   
 
   const handleEditClick = () => {
@@ -66,31 +64,31 @@ function InventoryCard({ car, getCars }) {
         <div className={styles.car_miles_price_container}>
   <div className={styles.info_row}>
     <span className={styles.subtitle}>Mileage:</span>
-    <span className={styles.info_value}>132,048</span>
+    <span className={styles.info_value}>{car.mileage}</span>
   </div>
   <div className={styles.info_row}>
     <span className={styles.subtitle}>Down Payment:</span>
-    <span className={styles.info_value}>$2,500-$3,500</span>
+    <span className={styles.info_value}>{car.sticker_price}</span>
   </div>
   <div className={styles.info_row}>
     <span className={styles.subtitle}>Interior Color:</span>
-    <span className={styles.info_value}>Black</span>
+    <span className={styles.info_value}>{car.interior_color}</span>
   </div>
   <div className={styles.info_row}>
     <span className={styles.subtitle}>Exterior Color:</span>
-    <span className={styles.info_value}>Green</span>
+    <span className={styles.info_value}>{car.color}</span>
   </div>
   <div className={styles.info_row}>
     <span className={styles.subtitle}>Engine: </span>
-    <span className={styles.info_value}>2.4</span>
+    <span className={styles.info_value}>{car.engine}</span>
   </div>
   <div className={styles.info_row}>
     <span className={styles.subtitle}>VIN Number:</span>
-    <span className={styles.info_value}>ZACCJABB5JPH60547</span>
+    <span className={styles.info_value}>{car.vin_number}</span>
   </div>
   <div className={styles.info_row}>
     <span className={styles.subtitle}>Additional Information:</span>
-    <span className={styles.info_value}>Working AC</span>
+    <span className={styles.info_value}>{car.description}</span>
   </div>
 </div>
 

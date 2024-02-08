@@ -60,7 +60,6 @@ module.exports = {
           ('BMW', '328i', '$2,900', 2015, '92,314', 'Black', 'Black', 'Sedan', 'Clean Title', 'XXXX', 'WBA3ZA5G56FNP34935', 'P34935', 'Working AC');
           
           INSERT INTO contact_information (first_name, last_name, phone, email, comments, car_id)
-          VALUES ('Toby', 'Flenderson', '+11397857411', 'tobyflenderson@gmail.com', '', 9);
           `,
           { transaction: t }
         );

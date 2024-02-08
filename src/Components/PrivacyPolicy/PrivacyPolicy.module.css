@@ -27,3 +27,9 @@
 .privacy_text{
   font-size: 1em;
 }
+
+.contact_container {
+  max-width: 40%;
+  border: 1px solid var(--light-gray);
+  margin-top: 20px;
+}

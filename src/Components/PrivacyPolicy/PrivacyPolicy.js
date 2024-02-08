@@ -59,7 +59,11 @@ const PrivacyPolicy = () => {
 
 <p className={styles.privacy_subtitle}>If you have any questions or concerns about this Privacy Policy, please contact us.</p>
 
+<div className={styles.contact_container}>
+
 <ContactInfo />
+</div>
+<br/>
 
     </div>
     )

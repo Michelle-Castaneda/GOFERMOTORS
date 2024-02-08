@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React, {useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import styles from "./Home.module.css";
 import heroImage from "../../assets/Hero-img.jpg";
@@ -7,10 +7,26 @@ import testDriveImg from "../../assets/steering wheel.jpeg"
 import aboutUsImage from "../../assets/aboutus.jpg";
 import CircularImage from "../CircularImage/CircularImage";
 import ContactInfo from "../ContactInfo/ContactInfo";
-import BodyTypeSelector from "../BodyTypeSelector/BodyTypeSelector";
-import QuickSearch from "../QuickSearch/QuickSearch";
+// import BodyTypeSelector from "../BodyTypeSelector/BodyTypeSelector";
+// import QuickSearch from "../QuickSearch/QuickSearch";
+import axios from "axios";
+import InventoryCard from "../InventoryCard/InventoryCard";
 
 function Home() {
+  const [cars, setCars] = useState([]);
+
+  useEffect(() => {
+    // Fetch car data from API or database and update the state
+    // Example API call
+    axios.get("http://localhost:4000/car_inventory")
+      .then((response) => {
+        setCars(response.data);
+      })
+      .catch((error) => {
+        console.error("Error fetching car data:", error);
+      });
+  }, []);
+
   useEffect(() => {
     const script = document.createElement("script");
     script.src = "https://static.elfsight.com/platform/platform.js";
@@ -49,8 +65,13 @@ function Home() {
       {/* <div className={styles.inventory_search_container}></div> */}
 
       <div className={styles.search_container}>
-  <QuickSearch styles={styles.quickSearch_container} />
-  <BodyTypeSelector styles={styles.bodySelector_container} />
+  {/* <QuickSearch styles={styles.quickSearch_container} />
+  <BodyTypeSelector styles={styles.bodySelector_container} /> */}
+  <div className={styles.inventory_cards_container}>
+        {cars.map((car) => (
+          <InventoryCard key={car.stock_number} car={car} />
+        ))}
+      </div>
 </div>
 
       <div>

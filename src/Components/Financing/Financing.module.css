@@ -1,41 +1,137 @@
 :root {
-    --primary-color: #16181D;
-    --secondary-color: rgba(214, 163, 11, 0.816);
-    --tiertiary-color: rgba(162, 123, 5, 0.936);
-    --light-gray: #ECF0F1;
-    --dark-gray: #16181D;
-    --error-red: #E74C3C;
-    --success-green: #2ECC71;
-    --transition-speed: 0.3s;
-  }
+  --primary-color: #16181D;
+  --secondary-color: rgba(214, 163, 11, 0.816);
+  --tertiary-color: rgba(162, 123, 5, 0.936);
+  --light-gray: #ECF0F1;
+  --dark-gray: #16181D;
+  --error-red: #E74C3C;
+  --success-green: #2ECC71;
+  --transition-speed: 0.3s;
+}
 
-  .financing_container{
-    background-color: var(--primary-color);
-  }
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--tertiary-color);
+}
 
-  .financing_title{
-    color: var(--secondary-color);
-    font-size: 2em;
-    font-weight: bold;
-  }
+.financing_wrapper {
+  max-width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: var(--primary-color);
+}
 
-  .financing_text, 
-  .next_vehicle,
-  .subtitle {
-    color: var(--light-gray);
-  }
+.financing_title {
+  font-size: xx-large;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: var(--secondary-color);
+}
 
-  .subtitle{
-    font-size: medium;
-    font-weight: bold;
-  }
+.next_vehicle {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 20px;
+  color: var(--light-gray);
+}
 
-  .next_vehicle{
-    /* align-content: center; */
-    font-size: large;
-    font-weight: bold;
-  }
+.inhouse_container,
+.financing_container {
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+}
 
-  /* .contact_financing{
-    font-size: small;
-  } */
+.customer_picture {
+  width: 220px;
+  height: 150px;
+  margin-right: 20px;
+  border-radius: 8px;
+}
+
+.subtitle {
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--light-gray);
+}
+.financing_expert {
+  color: var(--light-gray);
+margin-left: 5%;
+}
+
+.financing_text {
+  font-size: 16px;
+  margin-top: 10px;
+  color: var(--light-gray);
+  margin-left: 0px;
+}
+
+.subtitle_contact {
+  margin-top: 30px;
+  font-size: xx-large;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: var(--secondary-color);
+}
+
+.contact_container {
+  max-width: 40%;
+  border: 1px solid var(--light-gray);
+  margin-top: 20px;
+}
+
+p, hr {
+  color: var(--light-gray);
+}
+
+/* Custom CSS for benefits list */
+.benefits_list {
+  margin-top: 20px;
+  color: var(--light-gray);
+  margin-left: 5%;
+}
+
+.benefits_list ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.benefits_list li {
+  margin-bottom: 10px;
+}
+
+.benefits_list li::before {
+  content: '\2022'; /* Bullet point character */
+  color: var(--secondary-color); /* Use your custom color */
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+.credit_text {
+font-weight: bold;
+}
+
+.subtitle_benefits {
+  font-weight: bold;
+  font-size: larger;
+
+}
+
+.terms_apply{
+  color: var(--light-gray);
+font-size: small;
+margin-top: 1%;
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 768px) {
+  .financing_wrapper {
+    max-width: 90%; 
+  }
+  
+  .contact_container {
+    max-width: 90%;
+  }
+}

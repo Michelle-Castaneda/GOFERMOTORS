@@ -1,13 +1,29 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./ContactUs.module.css";
+import axios from "axios";
 // import ContactUsCard from "../ContactUsCard/ContactUsCard";
 import ContactInfo from "../ContactInfo/ContactInfo";
 import test_drive from "../../assets/contact_us_images/test_drive.jpg";
 import test_drive2 from "../../assets/contact_us_images/test_drive2.jpg";
 import customer_shaking_hands from "../../assets/contact_us_images/customer_shaking_hands.jpg";
 import Appointment from "../Appointment/Appointment"
+import InventoryCard from "../InventoryCard/InventoryCard";
 
 function ContactUs () {
+    const [cars, setCars] = useState([]);
+
+    useEffect(() => {
+      // Fetch car data from API or database and update the state
+      // Example API call
+      axios.get("http://localhost:4000/car_inventory")
+        .then((response) => {
+          setCars(response.data);
+        })
+        .catch((error) => {
+          console.error("Error fetching car data:", error);
+        });
+    }, []);
+
     useEffect(() => {
         const script = document.createElement("script");
         script.src = "https://static.elfsight.com/platform/platform.js";
@@ -67,9 +83,12 @@ function ContactUs () {
             <img className={styles.contact_pic} src={test_drive2} alt="woman driving2"/>
        </div>
 </div> */}
-<Appointment />
+
+{/* <Appointment /> */}
+
        <hr/>
        <br/>
+
        <div className={styles.whyGofer_container}>
 <div className={styles.whyGofer_title}>
     Why choose Gofer Motors?
@@ -108,6 +127,13 @@ Our sales and service team are knowledgeable, approachable, and dedicated to pro
 
         </div>
       </div>
+
+      <div className={styles.inventory_cards_container}>
+        {cars.map((car) => (
+          <InventoryCard key={car.stock_number} car={car} />
+        ))}
+      </div>
+
 </div>
 
     )

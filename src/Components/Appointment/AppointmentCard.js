@@ -39,12 +39,16 @@ function AppointmentCard () {
             Comments: formData.comments,
             car_id: selectedCar
         };
-
-        
-        
+    
         axios.post("http://localhost:4000/contact_information", appointmentData)
             .then(response => {
-
+                setSuccessMessage("Your appointment request was sent successfully!");
+            })
+            .catch(error => {
+                console.error("Error post request to appointment data:", error.response || error.message || error);
+                setSuccessMessage("Failed to send appointment request. Please try again later.");
+            })
+            .finally(() => {
                 setFormData({
                     name: '',
                     lastName: '',
@@ -53,51 +57,48 @@ function AppointmentCard () {
                     comments: ''
                 });
                 setSelectedCar('');
-                
-                setSuccessMessage("Your appointment request was sent successfully!");
-            })
-            .catch(error => {
-                console.error("Error post request to appointment data:", error.response.data);
             });
     };
+    
 
     return (
         <div className="appointmentCard_container"> 
             <input 
-                className="appointment_name" 
-                placeholder="Name" 
-                name="name" 
-                value={formData.name} 
-                onChange={handleInputChange}
-            />
-            <input 
-                className="appointment_last" 
-                placeholder="Last Name" 
-                name="lastName" 
-                value={formData.lastName}
-                onChange={handleInputChange}
-            />
-            <input 
-                className="appointment_phone" 
-                placeholder="Phone Number" 
-                name="phone"
-                value={formData.phone}
-                onChange={handleInputChange}
-            />
-            <input 
-                className="appointment_email" 
-                placeholder="Email"
-                name="email"
-                value={formData.email}
-                onChange={handleInputChange}
-            />
-            <input 
-                className="appointment_questions" 
-                placeholder="Comments"
-                name="comments"
-                value={formData.comments}
-                onChange={handleInputChange}
-            />
+    className="appointment_name" 
+    placeholder="Name" 
+    name="name" 
+    value={successMessage ? '' : formData.name} 
+    onChange={handleInputChange}
+/>
+<input 
+    className="appointment_last" 
+    placeholder="Last Name" 
+    name="lastName" 
+    value={successMessage ? '' : formData.lastName}
+    onChange={handleInputChange}
+/>
+<input 
+    className="appointment_phone" 
+    placeholder="Phone Number" 
+    name="phone"
+    value={successMessage ? '' : formData.phone}
+    onChange={handleInputChange}
+/>
+<input 
+    className="appointment_email" 
+    placeholder="Email"
+    name="email"
+    value={successMessage ? '' : formData.email}
+    onChange={handleInputChange}
+/>
+<input 
+    className="appointment_questions" 
+    placeholder="Comments"
+    name="comments"
+    value={successMessage ? '' : formData.comments}
+    onChange={handleInputChange}
+/>
+
             
             <select 
                 value={selectedCar}
