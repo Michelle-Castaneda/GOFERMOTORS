@@ -9,8 +9,7 @@ import Login from "../Login/Login";
 import loginImg from "../../assets/login.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons";
-import { FaFacebook, FaInstagram } from "react-icons/fa";
-import { FaWhatsapp} from 'react-icons/fa';
+import { FaFacebook, FaInstagram, FaWhatsapp } from "react-icons/fa";
 import { FaPhoneAlt } from "react-icons/fa";
 
 

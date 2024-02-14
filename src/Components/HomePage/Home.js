@@ -1,14 +1,12 @@
-import React, {useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import styles from "./Home.module.css";
 import heroImage from "../../assets/Hero-img.jpg";
-import financeImg from "../../assets/businessman-showing-key.jpg"
-import testDriveImg from "../../assets/steering wheel.jpeg"
+import financeImg from "../../assets/businessman-showing-key.jpg";
+import testDriveImg from "../../assets/steering wheel.jpeg";
 import aboutUsImage from "../../assets/aboutus.jpg";
 import CircularImage from "../CircularImage/CircularImage";
 import ContactInfo from "../ContactInfo/ContactInfo";
-// import BodyTypeSelector from "../BodyTypeSelector/BodyTypeSelector";
-// import QuickSearch from "../QuickSearch/QuickSearch";
 import axios from "axios";
 import InventoryCard from "../InventoryCard/InventoryCard";
 
@@ -36,7 +34,8 @@ function Home() {
     return () => {
       document.head.removeChild(script);
     };
-  }, []); 
+  }, []);
+
   return (
     <div className={styles.home_container}>
       <div className={styles.hero_container}>
@@ -62,17 +61,15 @@ function Home() {
         </div>
       </div>
 
-      {/* <div className={styles.inventory_search_container}></div> */}
-
       <div className={styles.search_container}>
-  {/* <QuickSearch styles={styles.quickSearch_container} />
-  <BodyTypeSelector styles={styles.bodySelector_container} /> */}
-  <div className={styles.inventory_cards_container}>
-        {cars.map((car) => (
-          <InventoryCard key={car.stock_number} car={car} />
-        ))}
+        {/* <QuickSearch styles={styles.quickSearch_container} />
+        <BodyTypeSelector styles={styles.bodySelector_container} /> */}
+        <div className={styles.inventory_cards_container}>
+          {cars.map((car) => (
+            <InventoryCard key={car.stock_number} car={car} />
+          ))}
+        </div>
       </div>
-</div>
 
       <div>
         <div className={styles.about_us_container}>
@@ -96,58 +93,43 @@ function Home() {
               sell cars; we sell trust, quality, and a lasting relationship.
             </p>
           </div>
-          
         </div>
         <div className={styles.contact_section}>
           <span className={styles.image_container}>
-            <CircularImage imageUrl={financeImg}  />
-         <h1>In House Financing Available!</h1>
-         <p>Our commitment to excellence extends to making the financing process seamless, whether you're eyeing a sleek sedan or a robust SUV. Let us tailor a financing solution that aligns with your unique needs.</p>
-         <Link to="/contact" style={{ textDecoration: "none" }}>
-         <button className={styles.contact_btn}>Contact us now!</button>
-         </Link>
+            <CircularImage imageUrl={financeImg} />
+            <h1>In House Financing Available!</h1>
+            <p>Our commitment to excellence extends to making the financing process seamless, whether you're eyeing a sleek sedan or a robust SUV. Let us tailor a financing solution that aligns with your unique needs.</p>
+            <Link to="/contact" style={{ textDecoration: "none" }}>
+              <button className={styles.contact_btn}>Contact us now!</button>
+            </Link>
           </span>
           <span>
             <span className={styles.line_box}></span>
           </span>
           <span className={styles.image_container}>
-          <h1>Schedule a Test Drive!</h1>
-         <p>Dive into the world of quality and precision with our carefully inspected used cars. Schedule a test drive today and let the road reveal the unmatched performance of our vehicles.</p>
+            <h1>Schedule a Test Drive!</h1>
+            <p>Dive into the world of quality and precision with our carefully inspected used cars. Schedule a test drive today and let the road reveal the unmatched performance of our vehicles.</p>
             <CircularImage imageUrl={testDriveImg} />
             <div>
-  <Link to="/contact" style={{ textDecoration: "none" }}>
-    <button className={styles.contact_btn}>Schedule a test drive!</button>
-  </Link>
-</div>
-
+              <Link to="/contact" style={{ textDecoration: "none" }}>
+                <button className={styles.contact_btn}>Schedule a test drive!</button>
+              </Link>
+            </div>
           </span>
         </div>
 
         <div className={styles.reviews_container}>
-        <hr/>
-        <div className="elfsight-app-f758bd66-983b-415b-97cd-0c676468ba9f" data-elfsight-app-lazy>
-</div>
+          <hr />
+          <div className="elfsight-app-f758bd66-983b-415b-97cd-0c676468ba9f" data-elfsight-app-lazy></div>
         </div>
-                <hr/>
+        <hr />
 
         <div className={styles.contact_container}>
-                  <hr/>
-
-        <ContactInfo className={styles.ContactInfo_Component}/>
-        <iframe className={styles.google_map}
-                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d28633.888531722707!2d-98.1018341!3d26.2215181!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86659f5b93e0b6d5%3A0x948d328f2ce5f191!2sGofer%20Motors%2C%20LLC!5e0!3m2!1sen!2sus!4v1697062032696!5m2!1sen!2sus" 
-                    width="600" 
-                    height="450" 
-                    style={{ border: "0" }} 
-                    allowFullScreen 
-                    loading="lazy" 
-                    title="Gofer Motors Location" 
-                    referrerPolicy="no-referrer-when-downgrade">
-                </iframe>
-                </div>
+          <hr />
+          <ContactInfo className={styles.ContactInfo_Component} />
+          <iframe className={styles.google_map} src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d28633.888531722707!2d-98.1018341!3d26.2215181!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86659f5b93e0b6d5%3A0x948d328f2ce5f191!2sGofer%20Motors%2C%20LLC!5e0!3m2!1sen!2sus!4v1697062032696!5m2!1sen!2sus" width="600" height="450" style={{ border: "0" }} allowFullScreen loading="lazy" title="Gofer Motors Location" referrerPolicy="no-referrer-when-downgrade"></iframe>
+        </div>
       </div>
-
-
     </div>
   );
 }

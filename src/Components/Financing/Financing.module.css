@@ -15,6 +15,7 @@ body {
   background-color: var(--tertiary-color);
 }
 
+/* Layout */
 .financing_wrapper {
   max-width: 80%;
   margin: 0 auto;
@@ -22,7 +23,14 @@ body {
   background-color: var(--primary-color);
 }
 
-.financing_title {
+.contact_container {
+  max-width: 40%;
+  border: 1px solid var(--light-gray);
+  margin-top: 20px;
+}
+
+/* Typography */
+.financing_title, .subtitle_contact {
   font-size: xx-large;
   font-weight: bold;
   margin-bottom: 20px;
@@ -36,13 +44,34 @@ body {
   color: var(--light-gray);
 }
 
-.inhouse_container,
-.financing_container {
-  display: flex;
-  align-items: center;
-  margin-top: 30px;
+.subtitle {
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--light-gray);
 }
 
+.financing_text {
+  font-size: 16px;
+  margin-top: 10px;
+  color: var(--light-gray);
+}
+
+.credit_text {
+  font-weight: bold;
+}
+
+.subtitle_benefits {
+  font-weight: bold;
+  font-size: larger;
+}
+
+.terms_apply {
+  color: var(--light-gray);
+  font-size: small;
+  margin-top: 1%;
+}
+
+/* Image Styling */
 .customer_picture {
   width: 220px;
   height: 150px;
@@ -50,42 +79,7 @@ body {
   border-radius: 8px;
 }
 
-.subtitle {
-  font-size: 18px;
-  font-weight: bold;
-  color: var(--light-gray);
-}
-.financing_expert {
-  color: var(--light-gray);
-margin-left: 5%;
-}
-
-.financing_text {
-  font-size: 16px;
-  margin-top: 10px;
-  color: var(--light-gray);
-  margin-left: 0px;
-}
-
-.subtitle_contact {
-  margin-top: 30px;
-  font-size: xx-large;
-  font-weight: bold;
-  margin-bottom: 20px;
-  color: var(--secondary-color);
-}
-
-.contact_container {
-  max-width: 40%;
-  border: 1px solid var(--light-gray);
-  margin-top: 20px;
-}
-
-p, hr {
-  color: var(--light-gray);
-}
-
-/* Custom CSS for benefits list */
+/* List Styling */
 .benefits_list {
   margin-top: 20px;
   color: var(--light-gray);
@@ -109,29 +103,9 @@ p, hr {
   margin-left: -1em;
 }
 
-.credit_text {
-font-weight: bold;
-}
-
-.subtitle_benefits {
-  font-weight: bold;
-  font-size: larger;
-
-}
-
-.terms_apply{
-  color: var(--light-gray);
-font-size: small;
-margin-top: 1%;
-}
-
 /* Media query for smaller screens */
 @media screen and (max-width: 768px) {
-  .financing_wrapper {
-    max-width: 90%; 
-  }
-  
-  .contact_container {
+  .financing_wrapper, .contact_container {
     max-width: 90%;
   }
 }

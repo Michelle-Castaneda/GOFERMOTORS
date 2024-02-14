@@ -3,18 +3,8 @@ import AuthContext from "../../store/authContext";
 // import axios from "axios";
 import styles from "./SearchBar.module.css";
 
+function SearchBar({ model, year, make, setYear, setMake, setModel, cars, soldStatus, setSoldStatus }) {
 
-function SearchBar({
-  model,
-  year,
-  make,
-  setYear,
-  setMake,
-  setModel,
-  cars,
-  soldStatus,
-  setSoldStatus,
-}) {
   const { state } = useContext(AuthContext);
 
   // const handleSearch = () => {

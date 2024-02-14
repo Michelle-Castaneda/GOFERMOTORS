@@ -1,16 +1,13 @@
 import React, { useContext, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { Link, useLocation } from "react-router-dom";
-import styles from "./Footer.module.css";
-import { FaFacebook, FaInstagram } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons";
-import { faMobileAlt } from "@fortawesome/free-solid-svg-icons";
-import { FaWhatsapp } from "react-icons/fa";
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { faEnvelope, faMapMarkerAlt, faMobileAlt } from "@fortawesome/free-solid-svg-icons";
+import { FaFacebook, FaInstagram, FaWhatsapp } from "react-icons/fa";
 import Modal from "../Modal/Modal";
 import AuthContext from "../../store/authContext";
 import Login from "../Login/Login";
+import styles from "./Footer.module.css";
 
 function Footer() {
   const { state, dispatch } = useContext(AuthContext);

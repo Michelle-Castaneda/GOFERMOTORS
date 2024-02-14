@@ -4,9 +4,7 @@ import styles from "./CarContactCard.module.css";
 
 function CarContactCard() {
   const [carListings, setCarListings] = useState([]);
-  const [selectedCar, setSelectedCar] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
-  const [selectedInterest, setSelectedInterest] = useState("");
 
   const [formData, setFormData] = useState({
     firstName: "",
@@ -31,39 +29,38 @@ function CarContactCard() {
 
   const handleInputChange = (e) => {
     setSuccessMessage("");
+    const { name, value } = e.target;
     setFormData((prevState) => ({
       ...prevState,
-      [e.target.name]: e.target.value,
+      [name]: value,
     }));
   };
 
   const handleSubmit = () => {
-    const ContactData = {
-      Name: formData.name,
-      Last_Name: formData.lastName,
-      Phone: formData.phone,
-      Email: formData.email,
-      Comments: formData.comments,
+    const contactData = {
+      firstName: formData.firstName,
+      lastName: formData.lastName,
+      phone: formData.phone,
+      email: formData.email,
+      comments: formData.comments,
       car_id: selectedCar,
     };
 
     axios
-      .post("http://localhost:4000/contact_information", ContactData)
+      .post("http://localhost:4000/contact_information", contactData)
       .then((response) => {
         setFormData({
-          name: "",
+          firstName: "",
           lastName: "",
           phone: "",
           email: "",
           comments: "",
         });
-        setSelectedCar("");
-
         setSuccessMessage("Your questions have been sent");
       })
       .catch((error) => {
         console.error(
-          "Error post request to Contact data:",
+          "Error post request to contact data:",
           error.response.data
         );
         setSuccessMessage("Please enter all fields*");
@@ -118,8 +115,9 @@ function CarContactCard() {
         />
       </div>
       <select
-        value={selectedInterest}
-        onChange={(e) => setSelectedInterest(e.target.value)}
+        className={styles.contact_select}
+        value={formData.interest}
+        onChange={(e) => setFormData({ ...formData, interest: e.target.value })}
       >
         <option value="">I'm interested in this</option>
         <option value="">I'd like to know your best price for this</option>

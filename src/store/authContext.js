@@ -18,10 +18,10 @@ const getLocalData = () => {
   const storedName = localStorage.getItem("username");
   const storedAdmin = localStorage.getItem("isadmin");
 
-  let remainingTime = storedExp - new Date().getTime()
-  if(remainingTime < 0) {
-    localStorage.clear()
-    return null
+  let remainingTime = parseInt(storedExp) - new Date().getTime();
+  if (remainingTime < 0) {
+    localStorage.clear();
+    return null;
   }
 
   return {
@@ -37,9 +37,9 @@ const AuthContextProvider = (props) => {
   const reducer = (state, action) => {
     switch (action.type) {
       case "LOGIN_PENDING":
-        return { ...state, userPending: true}
+        return { ...state, userPending: true };
       case "LOGIN":
-        let { token, exp, userId, username, isadmin } = action.payload;
+        const { token, exp, userId, username, isadmin } = action.payload;
         localStorage.setItem("token", token);
         localStorage.setItem("exp", exp);
         localStorage.setItem("userId", userId);
@@ -50,7 +50,7 @@ const AuthContextProvider = (props) => {
         localStorage.clear();
         return initialState;
       case "RETURNING_USER":
-        let { token: t, userId: u, exp: e, username: n, isadmin: a } = action.payload;
+        const { token: t, userId: u, exp: e, username: n, isadmin: a } = action.payload;
         return { ...state, token: t, userId: +u, exp: +e, username: n, isadmin: a };
       default:
         return state;
@@ -64,12 +64,13 @@ const AuthContextProvider = (props) => {
       dispatch({ type: "RETURNING_USER", payload: localData });
     }
   }, []);
-    return (
-        <AuthContext.Provider value={{ state, dispatch }}>
-        {props.children}
-      </AuthContext.Provider>
-    )
-}
+
+  return (
+    <AuthContext.Provider value={{ state, dispatch }}>
+      {props.children}
+    </AuthContext.Provider>
+  );
+};
 
 export default AuthContext;
 export { AuthContextProvider };

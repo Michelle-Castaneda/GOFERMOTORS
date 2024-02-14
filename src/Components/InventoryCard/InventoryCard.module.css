@@ -1,116 +1,115 @@
 :root {
-    --primary-color: #16181D;
-    --secondary-color: rgba(214, 163, 11, 0.816);
-    --tiertiary-color: rgba(162, 123, 5, 0.936);
-    --thecolor: rgb(179, 136, 9);
-    --light-gray: #ECF0F1;
-    --dark-gray: #2C3E50;
-    --error-red: #E74C3C;
-    --success-green: #2ECC71;
-    --transition-speed: 0.3s;
-  }
+  --primary-color: #16181D;
+  --secondary-color: rgba(214, 163, 11, 0.816);
+  --tiertiary-color: rgba(162, 123, 5, 0.936);
+  --thecolor: rgb(179, 136, 9);
+  --light-gray: #ECF0F1;
+  --dark-gray: #2C3E50;
+  --error-red: #E74C3C;
+  --success-green: #2ECC71;
+  --transition-speed: 0.3s;
+}
 
 .car_card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 20px;
-    margin-bottom: 20px;
-    background-color: var(--primary-color);
-  }
-  
-  .car_image_container {
-    position: relative;
-  }
-  
-  .admin_btn_container {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-  }
-  
-  .admin_btn_container button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    margin-left: 5px;
-  }
-  
-  .admin_btn_container button:hover {
-    opacity: 0.8;
-  }
-  
-  .carImageCard {
-    width: 100%;
-    max-width: 300px;
-    border-radius: 8px;
-    margin-top: 10px;
-  }
-  
-  .info {
-    margin-top: 20px;
-    color: var(--light-gray);
-  }
-  
-  .title {
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: var(--primary-color);
+}
 
-  .subtitle{
-    font-weight: bold;
-  }
+.car_image_container {
+  position: relative;
+}
 
-  .location {
-    margin-top: 20px;
-    font-style: italic;
-    color: #666;
-  }
-  
-  /* Edit, Delete, and Sold Buttons */
-  
-  .edit_btn,
-  .delete_btn,
-  .sold_btn {
-    background: none;
-    border: none;
-    cursor: pointer;
-    margin-right: 5px;
-  }
-  
-  .edit_img,
-  .trash_img,
-  .sold_img {
-    width: 20px;
-    height: 20px;
-  }
-  
-  .edit_btn:hover,
-  .delete_btn:hover,
-  .sold_btn:hover {
-    opacity: 0.8;
-  }
-  
-  .info_row{
-    margin-bottom: 5%;
-  }
+.admin_btn_container {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.admin_btn_container button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+.admin_btn_container button:hover {
+  opacity: 0.8;
+}
+
+.carImageCard {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+.info {
+  margin-top: 20px;
+  color: var(--light-gray);
+}
+
+.title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-weight: bold;
+}
+
+.location {
+  margin-top: 20px;
+  font-style: italic;
+  color: #666;
+}
+
+/* Edit, Delete, and Sold Buttons */
+
+.edit_btn,
+.delete_btn,
+.sold_btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.edit_img,
+.trash_img,
+.sold_img {
+  width: 20px;
+  height: 20px;
+}
+
+.edit_btn:hover,
+.delete_btn:hover,
+.sold_btn:hover {
+  opacity: 0.8;
+}
+
+.info_row {
+  margin-bottom: 5%;
+}
 
 .car_miles_price_container .info-row {
-    display: flex;
-    align-items: center;
-   
-  }
-  
+  display: flex;
+  align-items: center;
+}
+
+.car_miles_price_container .subtitle {
+  font-weight: bold;
+  margin-right: 1%;
+}
+
+@media screen and (max-width: 768px) {
   .car_miles_price_container .subtitle {
-    font-weight: bold;
-    margin-right: 1%;
+    margin-right: 0.5%; 
   }
-  
-  @media screen and (max-width: 768px) {
-    .car_miles_price_container .subtitle {
-      margin-right: 0.5%; 
-    }
-  }
+}

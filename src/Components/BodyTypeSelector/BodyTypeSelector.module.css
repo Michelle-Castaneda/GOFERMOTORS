@@ -1,40 +1,41 @@
 :root {
-    --primary-color: #16181D;
-    --secondary-color: rgba(214, 163, 11, 0.816);
-    --tiertiary-color: rgba(162, 123, 5, 0.936);
-    --thecolor: rgb(179, 136, 9);
-    --light-gray: #ECF0F1;
-    --dark-gray: #2C3E50;
-    --error-red: #E74C3C;
-    --success-green: #2ECC71;
-    --transition-speed: 0.3s;
+  --primary-color: #16181D;
+  --secondary-color: rgba(214, 163, 11, 0.816);
+  --tiertiary-color: rgba(162, 123, 5, 0.936);
+  --thecolor: rgb(179, 136, 9);
+  --light-gray: #ECF0F1;
+  --dark-gray: #2C3E50;
+  --error-red: #E74C3C;
+  --success-green: #2ECC71;
+  --transition-speed: 0.3s;
 }
 
 .body_container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between; 
-  }
-
-.body_title{
-    color: var(--light-gray);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
-.body_items{
-    display: flex;
-    flex-direction: row;
+.body_title {
+  color: var(--light-gray);
 }
+
+.body_items {
+  display: flex;
+  flex-direction: row;
+}
+
 .link-container {
-    margin: 1%;
-  }
-  
-  .link-container img {
-    width: 100%;
-    height: auto;
-    cursor: pointer;
-  }
-  
-  .link-container p {
-    text-align: center;
-    margin-top: 1%;
-  }
+  margin: 1%;
+  text-align: center; /* Center align the text */
+}
+
+.link-container img {
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+}
+
+.link-container p {
+  margin-top: 1%;
+}

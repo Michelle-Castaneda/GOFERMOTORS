@@ -2,10 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import styles from "./CarModal.module.css";
 
-const CarModal = ({ car, isOpen, closeModal }) => {
-  if (!isOpen) return null;
-
-  return (
+const CarModal = ({ car, isOpen, closeModal }) => (
+  isOpen ? (
     <div className={styles.modalOverlay}>
       <div className={styles.modalContent}>
         <span className={styles.closeButton} onClick={closeModal}>
@@ -15,7 +13,7 @@ const CarModal = ({ car, isOpen, closeModal }) => {
         <div className={styles.carImages}>
           {car.images.map((image, index) => (
             <img
-              key={index}
+              key={image.url} // Assuming each image URL is unique
               src={image.url}
               alt={`Image ${index + 1}`}
               className={styles.carImage}
@@ -30,8 +28,8 @@ const CarModal = ({ car, isOpen, closeModal }) => {
         {/* Add more characteristics here */}
       </div>
     </div>
-  );
-};
+  ) : null
+);
 
 CarModal.propTypes = {
   car: PropTypes.shape({

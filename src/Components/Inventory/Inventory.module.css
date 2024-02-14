@@ -1,14 +1,14 @@
+/* Inventory Container */
 .inventory_container {
     font-family: Arial, sans-serif;
     padding: 20px;
     background-color: #191919;
-    /* max-width: 1200px; */
     min-height: 100vh;
     margin: 0 auto;
 }
 
 .title {
-    font-size:3em;
+    font-size: 3em;
     color: white;
 }
 
@@ -18,14 +18,14 @@
     flex-wrap: wrap;
 }
 
-
 /* Add Inventory Form */
 
-.alert_message{
-    font-size: x-small;
+.alert_message {
+    font-size: small;
     color: red;
 }
-.new_car_container{
+
+.new_car_container {
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -33,17 +33,17 @@
     padding: 20px;
 }
 
-.new_car_title{
+.new_car_title {
     color: #333;
 }
 
-.add_inventory_container{
+.add_inventory_container {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.inputs{
+.inputs {
     padding: 14px 18px;
     margin-bottom: 18px;
     border: 1px solid #c0c0c0;
@@ -52,10 +52,9 @@
     width: 100%;
     box-sizing: border-box;
     transition: border-color 0.3s, box-shadow 0.3s;
-    margin: 5px 5px;
 }
 
-textarea{
+textarea {
     max-height: 75px;
     width: 73%;
     padding: 5px;
@@ -64,64 +63,61 @@ textarea{
     color: grey;
 }
 
-section{
+section {
     display: flex;
     justify-content: center;
     width: 75%;
 }
+
 input[type="radio"] {
-    accent-color: #F39C12;
     cursor: pointer;
     transform: scale(1.8);
     margin: 10px 10px;
-  }
-  input:focus,
-  select:focus{
-    border-color: #F39C12;
-    outline: none;
-  }
-textarea:focus{
+}
+
+input:focus,
+select:focus,
+textarea:focus {
     border-color: #F39C12;
     outline: none;
 }
- label{
-    color: grey;
- } 
 
-table{
+label {
+    color: grey;
+}
+
+table {
     background-color: #ECF0F1;
 }
 
-th{
+th {
     background-color: #F39C12;
     color: white;
     font-size: large;
-    font-weight:550;
-    /* border: 1px solid #f8f7f7; */
+    font-weight: 550;
     padding: 10px;
 }
 
-td{
+td {
     border: 1px solid #dddddd;
-    text-align: left;
+    text-align: center;
     background-color: white;
     padding: 5px;
-    text-align: center;
     color: grey;
 }
 
-.save_btn{
+.save_btn {
     justify-content: center;
-     align-items: center;
-     padding: 10px 10px;
-     transition: all 0.3s;
-     border: #d6a30bd0;
-     background-color: #d6a30bd0;
-     color: rgb(255, 255, 255);
-     border-radius: 4px;
-     cursor: pointer;
-     font-size: medium;
-     font-weight: bold;
-     margin-left: 35px;
-     margin-top: 10px;
+    align-items: center;
+    padding: 10px 10px;
+    transition: all 0.3s;
+    border: #d6a30bd0;
+    background-color: #d6a30bd0;
+    color: rgb(255, 255, 255);
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: medium;
+    font-weight: bold;
+    margin-left: 35px;
+    margin-top: 10px;
 }

@@ -1,15 +1,14 @@
 :root {
-    --primary-color: #16181D;
-    --secondary-color: rgba(214, 163, 11, 0.816);
-    --tiertiary-color: rgba(162, 123, 5, 0.936);
-    --thecolor: rgb(179, 136, 9);
-    --light-gray: #ECF0F1;
-    --dark-gray: #2C3E50;
-    --error-red: #E74C3C;
-    --success-green: #2ECC71;
-    --transition-speed: 0.3s;
+  --primary-color: #16181D;
+  --secondary-color: rgba(214, 163, 11, 0.816);
+  --tiertiary-color: rgba(162, 123, 5, 0.936);
+  --thecolor: rgb(179, 136, 9);
+  --light-gray: #ECF0F1;
+  --dark-gray: #2C3E50;
+  --error-red: #E74C3C;
+  --success-green: #2ECC71;
+  --transition-speed: 0.3s;
 }
-
 
 .quickSearch_container {
   display: flex;
@@ -22,52 +21,47 @@
 .input_group {
   display: flex;
   flex-direction: column;
-  gap: 5%; 
-}  
-  .title {
-    font-size: 1.5em;
-    margin-bottom: 5%;
-    color: var(--light-gray)
-  }
-  
-  .QuickSearch_To{
-    color: var(--light-gray);
-  }
-
-  
-  input,
-  select {
-    width: 100%;
-    padding: 1%;
-    box-sizing: border-box;
-    border: 1px solid #ccc;
-    border-radius: 1%;
-    font-size: 1em;
-  }
-  
-  .min-max-container {
-    display: grid;
-    gap: 2%;
-    grid-template-columns: 1fr 1fr;
+  gap: 5%;
 }
-  .search_button {
-    background-color:var(--secondary-color);
-    color: white;
-    border: none;
-    padding: 1%;
-    border-radius: 1%;
-    cursor: pointer;
-    font-size: 1em;
-    margin-top: 2%;
-  }
-  
-  .input_price{
-    display: flex;
-    flex-direction: row; 
-  }
-  /* @media (max-width: 600px) {
-    .quickSearch_container {
-      max-width: 300px;
-    }
-  }
-   */
+
+.title {
+  font-size: 1.5em;
+  margin-bottom: 5%;
+  color: var(--light-gray);
+}
+
+.QuickSearch_To {
+  color: var(--light-gray);
+}
+
+input,
+select {
+  width: 100%;
+  padding: 1%;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 1%;
+  font-size: 1em;
+}
+
+.min-max-container {
+  display: grid;
+  gap: 2%;
+  grid-template-columns: 1fr 1fr;
+}
+
+.search_button {
+  background-color: var(--secondary-color);
+  color: white;
+  border: none;
+  padding: 1%;
+  border-radius: 1%;
+  cursor: pointer;
+  font-size: 1em;
+  margin-top: 2%;
+}
+
+.input_price {
+  display: flex;
+  flex-direction: row;
+}

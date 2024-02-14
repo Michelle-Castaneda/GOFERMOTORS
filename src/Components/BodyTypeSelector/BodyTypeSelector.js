@@ -10,18 +10,18 @@ import convertible from '../../assets/body_types/convertible.png';
 import coupe from '../../assets/body_types/coupe.png';
 import hatchback from '../../assets/body_types/hatchback.png';
 
-const BodyTypeSelector = () => {
-  const bodyTypes = [
-    { type: 'PASSENGER', path: passenger },
-    { type: 'PICKUP', path: pickup },
-    { type: 'SEDAN', path: sedan },
-    { type: 'SUV', path: suv },
-    { type: 'WAGON', path: wagon },
-    { type: 'CONVERTIBLE', path: convertible },
-    { type: 'COUPE', path: coupe },
-    { type: 'HATCHBACK', path: hatchback },
-  ];
+const bodyTypes = [
+  { type: 'PASSENGER', path: passenger },
+  { type: 'PICKUP', path: pickup },
+  { type: 'SEDAN', path: sedan },
+  { type: 'SUV', path: suv },
+  { type: 'WAGON', path: wagon },
+  { type: 'CONVERTIBLE', path: convertible },
+  { type: 'COUPE', path: coupe },
+  { type: 'HATCHBACK', path: hatchback },
+];
 
+const BodyTypeSelector = () => {
   const handleImageClick = (bodyType) => {
     console.log(`Navigating to /inventory/${bodyType.toLowerCase()}`);
   };

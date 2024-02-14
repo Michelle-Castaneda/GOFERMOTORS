@@ -26,7 +26,6 @@
     "i18next": "^23.6.0",
     "jsonwebtoken": "^9.0.2",
     "jwt-decode": "^3.1.2",
-    "nodemailer": "^6.9.5",
     "pg": "^8.11.3",
     "pg-hstore": "^2.3.4",
     "react": "^18.2.0",
@@ -40,7 +39,6 @@
     "react-slick": "^0.29.0",
     "sequelize": "^6.33.0",
     "simplebar-react": "^3.2.4",
-    "slick-carousel": "^1.8.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

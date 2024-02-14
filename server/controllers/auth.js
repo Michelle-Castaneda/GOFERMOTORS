@@ -1,49 +1,38 @@
-require("dotenv").config();
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const SECRET = process.env.SECRET;
 const { sequelize } = require("../util/database");
 
-const createToken = (username, isadmin, id) => {
+const createToken = (username, isAdmin, userId) => {
   return jwt.sign(
     {
       username,
-      isadmin,
-      id,
+      isAdmin,
+      userId,
     },
     SECRET,
     {
-      expiresIn: "2 days",
+      expiresIn: process.env.TOKEN_EXPIRATION || "2 days",
     }
   );
 };
+
 const login = async (req, res) => {
   try {
     const { username, password } = req.body;
 
-    const [foundUserArr] = await sequelize.query(`
-    SELECT * FROM users
-    WHERE username = '${username}'
-    LIMIT 1
-  `);
+    const [foundUser] = await sequelize.query(`
+      SELECT * FROM users
+      WHERE username = $1
+      LIMIT 1
+    `, [username]);
 
-    if (foundUserArr[0]) {
-      const [foundUser] = foundUserArr;
+    if (foundUser) {
       const isAuthenticated = bcrypt.compareSync(password, foundUser.password);
 
       if (isAuthenticated) {
         const token = createToken(foundUser.username, foundUser.isadmin, foundUser.user_id);
-        const exp = Date.now() + 1000 * 60 * 60 * 48;
-        // console.log(foundUser);
-        const data = {
-          username: foundUser.username,
-          isadmin: foundUser.isadmin,
-          userId: foundUser.user_id,
-          token: token,
-          exp: exp,
-        };
-
-        res.status(200).send(data);
+        res.status(200).send({ token });
       } else {
         res.status(400).send("Password is incorrect");
       }
@@ -51,7 +40,8 @@ const login = async (req, res) => {
       res.status(400).send("User does not exist.");
     }
   } catch (error) {
-    res.status(400).send(error);
+    console.error("Error during login:", error);
+    res.status(500).send("An error occurred during login.");
   }
 };
 
@@ -59,75 +49,37 @@ const register = async (req, res) => {
   try {
     const { username, password } = req.body;
 
-    const [existingUserArr] = await sequelize.query(
+    const [existingUser] = await sequelize.query(
       `
       SELECT * FROM users
-      WHERE username = '${username}'
+      WHERE username = $1
       LIMIT 1
-    `
+    `, [username]
     );
 
-    const [adminFound] = await sequelize.query(
-      `
-        SELECT * FROM users
-      `
-    );
-
-    if (existingUserArr[0]) {
+    if (existingUser) {
       res.status(400).send("Username is not available");
-    } else if(adminFound[0]){
-      const salt = bcrypt.genSaltSync(10);
-      const hash = bcrypt.hashSync(password, salt);
+      return;
+    }
 
-      const [newUserArr] = await sequelize.query(
-        `
-        INSERT INTO users(username, isAdmin, password)
-        VALUES('${username}', '${false}', '${hash}')
-        RETURNING user_id, isAdmin, username
+    const isAdmin = !!(await sequelize.query("SELECT * FROM users LIMIT 1"))[0].length;
+
+    const salt = bcrypt.genSaltSync(12); // Increase cost factor for bcrypt
+    const hash = bcrypt.hashSync(password, salt);
+
+    const [newUser] = await sequelize.query(
       `
-      );
-      const [newUser] = newUserArr;
-      const token = createToken(newUser.username, newUser.user_id);
-      const exp = Date.now() + 1000 * 60 * 60 * 48;
+      INSERT INTO users(username, isAdmin, password)
+      VALUES($1, $2, $3)
+      RETURNING user_id, isAdmin, username
+    `, [username, isAdmin, hash]
+    );
 
-      const data = {
-        username: newUser.username,
-        userId: newUser.user_id,
-        token: token,
-        exp: exp,
-      };
-      // console.log(newUser);
-      // console.log(data);
-      res.status(200).send(data);
-    }else {
-        const salt = bcrypt.genSaltSync(10);
-        const hash = bcrypt.hashSync(password, salt);
-  
-        const [newUserArr] = await sequelize.query(
-          `
-          INSERT INTO users(username, isAdmin, password)
-          VALUES('${username}', '${true}', '${hash}')
-          RETURNING user_id, isAdmin, username
-        `
-        );
-        const [newUser] = newUserArr;
-        const token = createToken(newUser.username, newUser.isadmin, newUser.user_id);
-        const exp = Date.now() + 1000 * 60 * 60 * 48;
-  
-        const data = {
-          username: newUser.username,
-          isadmin: newUser.isadmin,
-          userId: newUser.user_id,
-          token: token,
-          exp: exp,
-        };
-        // console.log(newUser);
-        // console.log(data);
-        res.status(200).send(data);
-      }
+    const token = createToken(newUser.username, newUser.isadmin, newUser.user_id);
+    res.status(200).send({ token });
   } catch (error) {
-    console.log(error);
-    res.status(400).send(error);
+    console.error("Error during registration:", error);
+    res.status(500).send("An error occurred during registration.");
   }
 };
 
