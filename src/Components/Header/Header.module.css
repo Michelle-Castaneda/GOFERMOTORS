@@ -13,6 +13,7 @@
 .header_top_container {
     display: flex;
     justify-content: space-between;
+    /* align-items: center; */
     background-color: var(--primary-color);
     height: 8vh;
     padding: 0 1em;
@@ -21,22 +22,32 @@
 .header_top_right {
     display: flex;
     align-items: center;
-    gap: 1em;
+    gap: 2vw;
     color: white;
-    width: 75%;
-    justify-content: space-between;
-    padding: .5em;
 }
 
-.top_right_address_container,
-.header_top_right_phone_container {
+.header_top_right_data_container {
     width: 100%;
-    max-width: 100%;
     display: flex;
-    justify-content: space-between;
-    cursor: pointer;
+    flex-direction: row;
+    /* justify-content: space-between; */
+    gap: 1vw;
+}
+
+.header_top_right_phone_container {
+    width: auto; 
+    max-width: 50%; 
+    display: flex;
+    /* justify-content: flex-end; */
     text-decoration: none;
     color: white;
+}
+
+.header_top_right_phone {
+    text-decoration: none;
+    white-space: nowrap;
+    color: inherit;
+    font-size: 1em;
 }
 
 .top_right_address_container:hover,
@@ -44,15 +55,13 @@
     color: var(--tertiary-color);
 }
 
-.header_top_right_address,
-.header_top_right_phone {
+.header_top_right_address {
     border: none;
     background-color: transparent;
-    color: inherit;
+    color: var(--light-gray);
     font-size: 1em;
     display: flex;
     cursor: pointer;
-    justify-content: space-between;
 }
 
 .social_icon_container {
@@ -60,11 +69,12 @@
     display: flex;
     justify-content: space-between;
     padding: 0 1.5vw 0 0;
+    align-items: center;
 }
 
 .social_icon {
     color: var(--thecolor);
-    font-size: 2.2rem;
+    font-size: 2.2vw;
     cursor: pointer;
 }
 
@@ -159,8 +169,7 @@
         width: 100%;
     }
 
-    .top_right_address_container,
-    .header_top_right_phone_container {
+    .top_right_address_container {
         width: 100%;
         max-width: 100%;
     }

@@ -18,14 +18,14 @@ function Header() {
   const { state, dispatch } = useContext(AuthContext);
   const nav = useNavigate();
   const location = useLocation();
-  const phoneNumber = "+9562585021";
+  // const phoneNumber = "+9562585021";
   const [isModalOpen, setModalOpen] = useState(false);
 
-  const handleWhatsAppClick = () => {
-    const whatsAppPhone = '9562585021';
-    const whatsappUrl = `https://wa.me/${whatsAppPhone}?action=call`;
-    window.open(whatsappUrl, '_blank');
-  }
+  // const handleWhatsAppClick = () => {
+  //   const whatsAppPhone = '+1' + '9562585021';
+  //   const whatsappUrl = `https://wa.me/${whatsAppPhone}?action=call`;
+  //   window.open(whatsappUrl, '_blank');
+  // }
 
   const openModal = () => {
     setModalOpen(true);
@@ -38,11 +38,11 @@ function Header() {
   const address = "1703 N Tower Rd, Alamo, TX 78516";
 
   const openGoogleMaps = () => {
-    const mapsUrl = `https://www.google.com/maps?q=${encodeURIComponent(
-      address
-    )}`;
-    window.location.href = mapsUrl;
-  };
+    const mapsUrl = `https://www.google.com/maps?q=${encodeURIComponent(address)}`;
+    window.open(mapsUrl, '_blank'); 
+};
+
+
   return (
     <div className={styles.header}>
       <div className={styles.header_top_container}>
@@ -55,7 +55,9 @@ function Header() {
             />
           </Link>
         </span>
+
         <span className={styles.header_top_right}>
+
           <span className={styles.header_top_right_data_container}>
             <span onClick={openGoogleMaps} className={styles.top_right_address_container}>
               <button
@@ -67,9 +69,7 @@ function Header() {
             </span>
 
             <span className={styles.header_top_right_phone_container}>
-              <a
-                href={`tel:${phoneNumber}`}
-                className={styles.header_top_right_phone}
+              <a className={styles.header_top_right_phone}
               >
                 <FaPhoneAlt className={styles.header_icon} />
                 {" "}(956) 258-5021
@@ -78,11 +78,8 @@ function Header() {
 
             <span className={styles.header_top_right_phone_container}>
               <span                
-                className={styles.header_top_right_phone}
-                onClick={handleWhatsAppClick}
-              >
-                <FaWhatsapp className={styles.header_icon}
-                onClick={handleWhatsAppClick} />
+                className={styles.header_top_right_phone}>
+                <FaWhatsapp className={styles.header_icon} />
                {" "} (956) 533 - 8752
               </span>
             </span>
