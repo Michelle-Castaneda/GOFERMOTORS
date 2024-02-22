@@ -11,7 +11,7 @@ const Financing = () => {
         Welcome to the easiest way to buy your next car
       </div>
 
-      <p>
+      <p className={styles.financing_welcome}>
         At Gofer Motors, we understand that purchasing a vehicle is a significant investment. That's why we've partnered with several reputable financing companies to provide you with flexible and competitive auto financing options. Whether you're looking for a loan with a low interest rate, flexible repayment terms, or special financing programs, we've got you covered.
       </p>
 
@@ -31,7 +31,7 @@ const Financing = () => {
       <div className={styles.financing_container}>
         <img className={styles.customer_picture} src={standying_by} alt="Men Standing Next to Cars" />
         <div className={styles.subtitle}>Auto Financing</div>
-        <div className={styles.financing_expert}>
+        <div className={styles.financing_text}>
           Our financing experts are here to guide you through the process and help you find the best financing solution tailored to your needs and budget. With our hassle-free financing options, you can get behind the wheel of your dream car sooner than you think.
         </div>
       </div>

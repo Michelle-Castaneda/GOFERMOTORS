@@ -2,40 +2,62 @@
 :root {
   --primary-color: #16181D;
   --secondary-color: rgba(214, 163, 11, 0.816);
-  --tertiary-color: rgba(162, 123, 5, 0.936); /* Corrected typo */
+  --tertiary-color: rgba(162, 123, 5, 0.936); 
   --light-gray: #ECF0F1;
   --dark-gray: #2C3E50;
   --error-red: #E74C3C;
   --success-green: #2ECC71;
   --transition-speed: 0.3s;
 }
-
 /* Privacy policy container */
-.privacyp_container {
-  min-height: 100vh;
-  background-color: var(--primary-color);
-  color: white;
+.privacyContainer {
+  max-width: 800px;
+  margin: 2% auto;
+  padding: 20px;
+  background-color: var(--light-gray);
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Privacy policy title */
-.privacy_title {
-  font-size: 2em;
-  color: var(--secondary-color);
+.privacyTitle {
+  font-size: 24px;
+  margin-bottom: 16px;
+  color: #333;
+}
+
+/* Privacy policy date */
+.privacyDate {
+  font-size: 14px;
+  color: #666;
+}
+
+/* Privacy policy outlines */
+.privacyOutlines {
+  margin-top: 16px;
+  font-size: 16px;
 }
 
 /* Privacy policy subtitle */
-.privacy_subtitle {
-  font-size: 1.5em;
+.privacySubtitle {
+  font-size: 20px;
+  margin-top: 24px;
+  color: #333;
 }
 
 /* Privacy policy text */
-.privacy_text {
-  font-size: 1em;
+.privacyText {
+  font-size: 16px;
+  margin-bottom: 16px;
+  color: #555;
 }
 
 /* Contact container */
-.contact_container {
-  max-width: 40%;
-  border: 1px solid var(--light-gray);
-  margin-top: 20px;
+.contactContainer {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }

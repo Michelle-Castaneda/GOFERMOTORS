@@ -9,6 +9,12 @@ module.exports = {
           DROP TABLE IF EXISTS contact_information;
           DROP TABLE IF EXISTS car_inventory;
           DROP TABLE IF EXISTS users;
+          `,
+          { transaction: t }
+        );
+
+        await sequelize.query(
+          `
           
           CREATE TABLE users (
             user_id SERIAL PRIMARY KEY,
@@ -45,7 +51,12 @@ module.exports = {
             car_id INTEGER,
             FOREIGN KEY (car_id) REFERENCES car_inventory (car_id)
           );
-          
+          `,
+          { transaction: t }
+        );
+
+        await sequelize.query(
+          `
           INSERT INTO car_inventory ( make, model, sticker_price, year, mileage, color, interior_color, body_type, title, engine, vin_number, stock_number, description) 
           VALUES 
           ('Kia', 'Forte', '$2,000-$3,000', 2018, '57,000', 'Black', 'Black', 'Sedan', 'Clean Title', '2', '3KPFK4A72JE180386', '180386', 'Working AC'),
@@ -55,11 +66,14 @@ module.exports = {
           ('Mitsubishi', 'Mirage G4', '$1,500', 2020, '66,000', 'Blue', 'Black', 'Sedan', 'Clean Title', '1.2', 'ML32F4FJXLHF02685', 'F02685', 'Working AC'),
           ('Ford', 'Escape', '$2,000', 2014, '70,000', 'Gray', 'Gray', 'SUV', 'Clean Title', '1.6', 'FMCU0GX4EUC04087', 'C04087', 'Working AC'),
           ('Chevrolet', 'Trax', '$2,000', 2017, '164,247', 'Burgundy', 'Black', 'Sedan', 'Clean Title', '1.4', '3GNCJKSB6HL265645', '265645', 'Working AC'),
-          ('Buick', 'Encore', '$XXXX', 2016, '122,135', 'Blue', 'Black', 'SUV', 'Clean Title', '1.4', 'KL4CJ1SM0GB614622', '614622', 'Working AC'),
+          ('Buick', 'Encore', '$2,000', 2016, '122,135', 'Blue', 'Black', 'SUV', 'Clean Title', '1.4', 'KL4CJ1SM0GB614622', '614622', 'Working AC'),
           ('Jeep', 'Renegade', '$2,500', 2020, '84,288', 'Black', 'Black', 'Sedan', 'Clean Title', '2.4', 'ZACNJABB6LPL50638', 'L50638', 'Working AC'),
-          ('BMW', '328i', '$2,900', 2015, '92,314', 'Black', 'Black', 'Sedan', 'Clean Title', 'XXXX', 'WBA3ZA5G56FNP34935', 'P34935', 'Working AC');
+          ('BMW', '328i', '$2,900', 2015, '92,314', 'Black', 'Black', 'Sedan', 'Clean Title', '2', 'WBA3ZA5G56FNP34935', 'P34935', 'Working AC');
           
           INSERT INTO contact_information (first_name, last_name, phone, email, comments, car_id)
+          VALUES
+          ('John', 'Doe', '123-456-7890', 'john@example.com', 'Great service!', 1)
+
           `,
           { transaction: t }
         );

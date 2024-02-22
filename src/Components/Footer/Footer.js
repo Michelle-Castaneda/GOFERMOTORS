@@ -29,22 +29,22 @@ function Footer() {
     setModalOpen(false);
   };
 
-  const handleWhatsAppClick = () => {
-    const whatsappUrl = `https://wa.me/${whatsAppPhone}?action=call`;
+  // const handleWhatsAppClick = () => {
+  //   const whatsappUrl = `https://wa.me/${whatsAppPhone}?action=call`;
 
-    window.open(whatsappUrl, "_blank");
-  };
+  //   window.open(whatsappUrl, "_blank");
+  // };
 
-  const handleEmailClick = () => {
-    window.location.href = `mailto:${email}`;
-  };
+  // const handleEmailClick = () => {
+  //   window.location.href = `mailto:${email}`;
+  // };
 
   const openGoogleMaps = () => {
-    const mapsUrl = `https://www.google.com/maps?q=${encodeURIComponent(
-      address
-    )}`;
-    window.location.href = mapsUrl;
+    const mapsUrl = `https://www.google.com/maps?q=${encodeURIComponent(address)}`;
+    window.open(mapsUrl, "_blank");
   };
+  
+
   return (
     <div className={styles.footer_container}>
       <div className={styles.footer_line_container}>
@@ -58,7 +58,7 @@ function Footer() {
             <div className={styles.contact_container}>
               <button
                 className={styles.email_button}
-                onClick={handleEmailClick}
+                // onClick={handleEmailClick}
               >
                 <FontAwesomeIcon
                   className={styles.email_icon}
@@ -68,25 +68,28 @@ function Footer() {
                 />
                 y.gofer@gofermotors.com
               </button>
-              <a href={`tel:${phoneNumber}`} className={styles.phone_tag}>
+
+              <span href={`tel:${phoneNumber}`} className={styles.phone_tag}>
                 <FontAwesomeIcon
                   color={"rgba(214, 163, 11, 0.816)"}
                   size="2x"
                   style={{ transform: "rotate(35deg)" }}
                   icon={faMobileAlt}
                 />
-                (956)-258-5021
-              </a>
+               {" "} (956)-258-5021
+              </span>
+
               <span
                 className={styles.whats_app_tag}
-                onClick={handleWhatsAppClick}
+                // onClick={handleWhatsAppClick}
               >
+
                 <FaWhatsapp
                   color={"rgba(214, 163, 11, 0.816)"}
                   size="2vw"
-                  onClick={handleWhatsAppClick}
+                  // onClick={handleWhatsAppClick}
                 />
-                (956)-258-5021
+                {" "} (956) 533-8752
               </span>
 
               <span onClick={openGoogleMaps}>

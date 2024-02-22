@@ -5,8 +5,8 @@ import InventoryCard from "../InventoryCard/InventoryCard";
 import axios from "axios";
 import SearchBar from "../SearchBar/SearchBar";
 import AuthContext from "../../store/authContext";
-import Modal from "../Modal/Modal";
-import AddInventoryForms from "./AddInventoryForms";
+// import Modal from "../Modal/Modal";
+// import AddInventoryForms from "./AddInventoryForms";
 
 function Inventory() {
   const { state, dispatch } = useContext(AuthContext);
@@ -20,10 +20,10 @@ function Inventory() {
   const [soldStatus, setSoldStatus] = useState("Not Sold");
   const [soldSearch, setSoldSearch] = useState("");
 
-  const [isModalOpen, setModalOpen] = useState(false);
+  // const [isModalOpen, setModalOpen] = useState(false);
 
-  const openModal = () => setModalOpen(true);
-  const closeModal = () => setModalOpen(false);
+  // const openModal = () => setModalOpen(true);
+  // const closeModal = () => setModalOpen(false);
 
   useEffect(() => {
     getCars();
@@ -85,13 +85,13 @@ function Inventory() {
         setSoldStatus={setSoldStatus}
       />
 
-      {state.token && state.isadmin === true || state.isadmin === "true" && (
+      {/* {state.token && state.isadmin === true || state.isadmin === "true" && (
         <button className="add-inventory" onClick={openModal}>Add Inventory</button>
       )}
 
       <Modal isOpen={isModalOpen} closeModal={closeModal}>
         <AddInventoryForms cars={cars} getCars={getCars} isOpen={isModalOpen} closeModal={closeModal} />
-      </Modal>
+      </Modal> */}
 
       <div className={styles.card_container}>{carResults}</div>
     </div>

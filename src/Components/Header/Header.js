@@ -80,7 +80,7 @@ function Header() {
               <span                
                 className={styles.header_top_right_phone}>
                 <FaWhatsapp className={styles.header_icon} />
-               {" "} (956) 533 - 8752
+               {" "} (956) 533-8752
               </span>
             </span>
 

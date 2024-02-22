@@ -178,5 +178,11 @@
   .email_button {
     background-color: transparent;
     border: none;
-   
+   color: var(--light-gray);
+  }
+
+  .map_button {
+    color: var(--light-gray);
+    background-color: transparent;
+
   }

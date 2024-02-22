@@ -15,12 +15,12 @@ function Appointment () {
         </div>
         
         <div className="appointment_pics_container">
-        <img className="appointment_pic1" src={test_drive} loading="lazy" alt="test drive 1"/>
-            <img className="appointment_pic2" src={test_drive2} loading="lazy" alt="test drive 2"/>
+        <img className="appointment_pic1" src={test_drive} loading="lazy" alt="Person test driving car 1"/>
+            <img className="appointment_pic2" src={test_drive2} loading="lazy" alt="Person test driving car 2"/>
         </div>
        </div>
 
-    )
+    );
 }
 
 export default Appointment;
